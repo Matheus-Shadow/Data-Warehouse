@@ -9,9 +9,9 @@ Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar
 - `Documentos/`: Contém a documentação total do projeto.
 - `Environment/`: Contém as variáveis de ambiente para conexão das fontes de dados.
 - `Modelagens/`: Contém a modelagem conceitural e física (DER).
-- `Pipeline`: Scripts orquestradores das fontes de dados.
-- `Schema` : Estrutura dos objetos do sql (tabelas).
-- `Source` : Fonte de dados.
+- `Pipeline/`: Scripts orquestradores das fontes de dados.
+- `Schema/` : Estrutura dos objetos do sql (tabelas).
+- `Source/` : Fonte de dados.
 - `.gitignore` : Credenciais ocultadas por motivo de segurança.
 - `requerimentos`: Bibliotecas utilizadas no projeto.
 - `README.md`: Este arquivo.
