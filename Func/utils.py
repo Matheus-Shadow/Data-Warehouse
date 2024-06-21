@@ -45,27 +45,13 @@ def load_env(env_file):
         logging.error(f"Erro ao carregar o arquivo .env: {str(e)}")
         return None
 
-def execute_query(cursor, query_file):
-    """
-    Executa uma consulta SQL a partir de um arquivo e retorna os resultados como DataFrame.
-
-    Args:
-    cursor: Objeto cursor para interagir com o banco de dados.
-    query_file (str): Caminho para o arquivo SQL contendo a consulta.
-
-    Returns:
-    DataFrame: DataFrame contendo os resultados da consulta.
-    """
+def execute_query_sql(conn, query_file):
     try:
         with open(query_file, 'r') as file:
             query = file.read()
 
-        cursor.execute(query)
-        columns = [column[0] for column in cursor.description]  # Obter nomes das colunas
-        data = cursor.fetchall()  # Obter todas as linhas
-
-        # Converter os dados para um DataFrame do Pandas
-        df = pd.DataFrame(data, columns=columns)
+        # Usar read_sql_query para executar a consulta
+        df = pd.read_sql_query(query, conn)
 
         logging.info("Consulta SQL executada com sucesso.")
 
@@ -73,7 +59,7 @@ def execute_query(cursor, query_file):
 
     except Exception as e:
         logging.error(f"Erro ao executar a consulta SQL: {str(e)}")
-        return pd.DataFrame()
+        return pd.DataFrame() 
 
 def connect_to_database(env_vars):
     """
