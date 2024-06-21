@@ -129,4 +129,3 @@ def main(env_file, query_file):
     except Exception as e:
         logging.error(f"Erro durante a execução: {str(e)}")
         return pd.DataFrame()  # Retorna um DataFrame vazio em caso de erro
-

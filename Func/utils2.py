@@ -77,7 +77,7 @@ def connect_to_database(env_vars):
             raise ValueError("Certifique-se de que todas as variáveis de ambiente necessárias estejam definidas no arquivo .env.")
 
         # Construir a string de conexão
-        connection_string = f"DRIVER={{{env_vars['DRIVER']}}};SERVER={env_vars['SERVER']},{env_vars['PORT']};DATABASE={env_vars['DATABASE']};UID={env_vars['USERNAME']};PWD={env_vars['PASSWORD']}"
+        connection_string = f"DRIVER={env_vars['DRIVER']};SERVER={env_vars['SERVER']},{env_vars['PORT']};DATABASE={env_vars['DATABASE']};UID={env_vars['USERNAME']};PWD={env_vars['PASSWORD']}"
 
         # Conectar ao banco de dados
         conn = pyodbc.connect(connection_string)
@@ -107,14 +107,13 @@ def main(env_file, query_file):
         
         if env_vars:
             # Conectar ao banco de dados
-            conn, cursor = connect_to_database(env_vars)
+            conn = connect_to_database(env_vars)
             
-            if conn and cursor:
+            if conn:
                 # Executar a consulta e obter o DataFrame
                 df = execute_query_sql(conn, query_file)
                 
                 # Fechar conexão com o banco de dados
-                cursor.close()
                 conn.close()
                 
                 logging.info("Conexão fechada com sucesso.")
@@ -129,4 +128,3 @@ def main(env_file, query_file):
     except Exception as e:
         logging.error(f"Erro durante a execução: {str(e)}")
         return pd.DataFrame()  # Retorna um DataFrame vazio em caso de erro
-
