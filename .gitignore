@@ -1,2 +1,5 @@
-# Ignorar o arquivo .Env_01 dentro da pasta Environment
-Environment/.Env_01
+*.log
+*.pyc
+__pycache__/
+node_modules/
+.env
