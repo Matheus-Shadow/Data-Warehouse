@@ -1,2 +1,5 @@
 Environment/*
 !Environment/git.keeper
+
+Documentos/*
+!Documentos/git.keeper
