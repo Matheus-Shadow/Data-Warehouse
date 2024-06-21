@@ -111,7 +111,7 @@ def main(env_file, query_file):
             
             if conn and cursor:
                 # Executar a consulta e obter o DataFrame
-                df = execute_query(cursor, query_file)
+                df = execute_query_sql(cursor, query_file)
                 
                 # Fechar conexão com o banco de dados
                 cursor.close()
