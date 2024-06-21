@@ -90,11 +90,11 @@ def execute_query(cursor, query_file):
             query = file.read()
         
         cursor.execute(query)
-        columns = [column[0] for column in cursor.description]  # Obter nomes das colunas
-        data = cursor.fetchall()  # Obter todas as linhas
         
-        # Debug: Imprimir os dados para entender seu formato
-        print(data)
+        # Obter os metadados das colunas (nomes das colunas)
+        columns = [column[0] for column in cursor.description]
+        
+        data = cursor.fetchall()  # Obter todas as linhas
         
         # Converter os dados para um DataFrame do Pandas
         df = pd.DataFrame(data, columns=columns)
