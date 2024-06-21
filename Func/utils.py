@@ -45,67 +45,64 @@ def load_env(env_file):
         logging.error(f"Erro ao carregar o arquivo .env: {str(e)}")
         return None
 
-def connect_to_database(env_vars):
-    """
-    Estabelece uma conexão com o banco de dados utilizando as variáveis de ambiente fornecidas.
-    
-    Args:
-    env_vars (dict): Dicionário contendo as variáveis de ambiente necessárias para a conexão.
-    
-    Returns:
-    tuple: Objeto de conexão com o banco de dados e objeto cursor.
-    """
-    try:
-        # Verificar se todas as variáveis de ambiente necessárias foram carregadas
-        if not all(env_vars.values()):
-            raise ValueError("Certifique-se de que todas as variáveis de ambiente (SERVER_MIS, DATABASE_MIS, USERNAME_MIS, PASSWORD_MIS, DRIVER_MIS) estejam definidas no arquivo .env.")
-        
-        # Construir a string de conexão
-        connection_string = f"DRIVER={env_vars['DRIVER']};SERVER={env_vars['SERVER']},{env_vars['PORT']};DATABASE={env_vars['DATABASE']};UID={env_vars['USERNAME']};PWD={env_vars['PASSWORD']}"
-        
-        # Conectar ao banco de dados
-        conn = pyodbc.connect(connection_string)
-        cursor = conn.cursor()
-        
-        logging.info("Conexão ao banco de dados estabelecida.")
-        
-        return conn, cursor
-    except Exception as e:
-        logging.error(f"Erro ao conectar ao banco de dados: {str(e)}")
-        return None, None
-
 def execute_query(cursor, query_file):
     """
     Executa uma consulta SQL a partir de um arquivo e retorna os resultados como DataFrame.
-    
+
     Args:
     cursor: Objeto cursor para interagir com o banco de dados.
     query_file (str): Caminho para o arquivo SQL contendo a consulta.
-    
+
     Returns:
     DataFrame: DataFrame contendo os resultados da consulta.
     """
     try:
         with open(query_file, 'r') as file:
             query = file.read()
-        
+
         cursor.execute(query)
-        
-        # Obter os metadados das colunas (nomes das colunas)
-        columns = [column[0] for column in cursor.description]
-        
+        columns = [column[0] for column in cursor.description]  # Obter nomes das colunas
         data = cursor.fetchall()  # Obter todas as linhas
-        
+
         # Converter os dados para um DataFrame do Pandas
         df = pd.DataFrame(data, columns=columns)
-        
+
         logging.info("Consulta SQL executada com sucesso.")
-        
+
         return df
+
     except Exception as e:
         logging.error(f"Erro ao executar a consulta SQL: {str(e)}")
-        return pd.DataFrame()  # Retorna um DataFrame vazio em caso de erro
+        return pd.DataFrame()
 
+def connect_to_database(env_vars):
+    """
+    Estabelece uma conexão com o banco de dados utilizando as variáveis de ambiente fornecidas.
+
+    Args:
+    env_vars (dict): Dicionário contendo as variáveis de ambiente necessárias para a conexão.
+
+    Returns:
+    pyodbc.Connection: Objeto de conexão com o banco de dados.
+    """
+    try:
+        # Verificar se todas as variáveis de ambiente necessárias foram carregadas
+        if not all(env_vars.values()):
+            raise ValueError("Certifique-se de que todas as variáveis de ambiente necessárias estejam definidas no arquivo .env.")
+
+        # Construir a string de conexão
+        connection_string = f"DRIVER={{{env_vars['DRIVER']}}};SERVER={env_vars['SERVER']},{env_vars['PORT']};DATABASE={env_vars['DATABASE']};UID={env_vars['USERNAME']};PWD={env_vars['PASSWORD']}"
+
+        # Conectar ao banco de dados
+        conn = pyodbc.connect(connection_string)
+
+        logging.info("Conexão ao banco de dados estabelecida.")
+
+        return conn
+
+    except Exception as e:
+        logging.error(f"Erro ao conectar ao banco de dados: {str(e)}")
+        return None
 
 def main(env_file, query_file):
     """
