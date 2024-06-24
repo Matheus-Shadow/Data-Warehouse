@@ -1,0 +1,9 @@
+inicio dia 24/06
+fim dia 30/08
+
+
+-/////////////-
+
+Arrumar os .Env de cada um dos bancos que temos para logar
+
+Documentação detail criada.
