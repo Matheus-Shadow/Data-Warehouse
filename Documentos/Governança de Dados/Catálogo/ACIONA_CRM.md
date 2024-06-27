@@ -4,4 +4,4 @@
 - **Descrição**: Registros de interações com clientes registradas no CRM.
 - **Fonte**: Sistema CRM fornecido por JCA - ACTYON E VCOM
 - **Periodicidade de Atualização**: Em batch, a cada hora.
-- **Responsável**: Equipe de Data Analytics.
+- **Responsável pela Integração**: Equipe de Data Analytics.
