@@ -1,6 +1,8 @@
 Environment/*
 !Environment/git.keeper
 
+.vscode
+
 Documentos/*
 !Documentos/git.keeper
 !Documentos/Mapeamento das Fontes de Dados
