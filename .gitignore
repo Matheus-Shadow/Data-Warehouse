@@ -1,7 +1,7 @@
 Environment/*
 !Environment/git.keeper
 
-.vscode
+.vscode/*
 
 Documentos/*
 !Documentos/git.keeper
