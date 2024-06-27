@@ -32,4 +32,4 @@ Certifique-se de ter os seguintes programas instalados:
 Instale as dependências Python necessárias:
 
 ```bash
-pip install -r requirements.txt
+pip install -r requerimentos.txt
