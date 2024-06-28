@@ -7,7 +7,7 @@ Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar
 ## Estrutura do Projeto
 
 - [Documentos](Documentos/): Contém a documentação total do projeto.
-  - [Governança.md](Documentos/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
+  - [Governança.md](Documentos/Governança_de_Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
   - [Catalogo.md](Documentos/Catalogo.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
   - [Dicionario.md](Documentos/Dicionario.md): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
   - [Metadados.md](Documentos/Metadados.md): Documento que explica os metadados utilizados no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
