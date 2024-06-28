@@ -1,4 +1,4 @@
-# Catálogo de Dados - Acionamentos do CRM
+# Dicionário de Dados - Acionamentos do CRM
 
 **Objetivo**: Centralizar e prover todos os Dados tratados de Acionamentos do CRM.  
 **Nome da Tabela**: ACIONA_CRM  
