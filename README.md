@@ -8,9 +8,9 @@ Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar
 
 - [Documentos](Documentos/): Contém a documentação total do projeto.
   - [Governança.md](Documentos/Governança%20de%20Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
-  - [Catalogo.md](Documentos/Catalogo.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
-  - [Dicionario.md](Documentos/Dicionario.md): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
-  - [Metadados.md](Documentos/Metadados.md): Documento que explica os metadados utilizados no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
+  - [Catalogo.md](Documentos/Governança%20de%20Dados/Catálogo/Catálogo%20de%20Dados.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
+  - [Dicionario.md](Documentos/Governança%20de%20Dados/Dicionário): Documento que descreve os objetos físicos (tabelas) no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
+  - [Metadados.md](Documentos/Governança%20de%20Dados/Metadados): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
 - [Environment](Environment/): Contém as variáveis de ambiente para conexão das fontes de dados.
 - [Func](Func/): Contém as funções para auxiliar a pipeline de dados.
 - [Modelagens](Modelagens/): Contém a modelagem conceitual e física (DER).
