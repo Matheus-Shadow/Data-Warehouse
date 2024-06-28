@@ -1,7 +1,7 @@
 # Catálogo de Dados - Data Warehouse
 
 ## Dados de Acionamentos do CRM.
-- **Descrição**: Registros de interações com clientes registradas no CRM.
+- **Descrição**: Registros de interações com clientes cadastradas no CRM.
 
 ## Dados de Acionamentos Ativos do Discador.
 - **Descrição**: Registros das discagens realizadas pelo discador.
