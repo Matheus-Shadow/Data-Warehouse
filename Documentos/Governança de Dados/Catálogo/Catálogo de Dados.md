@@ -1,5 +1,10 @@
 # Catálogo de Dados - Data Warehouse
 
+## Introdução
+O Catálogo de Dados é um recurso essencial para a gestão eficaz dos ativos de dados da nossa organização. Este documento centraliza e documenta informações detalhadas sobre os diferentes conjuntos de dados disponíveis, facilitando o acesso, compreensão e utilização dos dados. 
+
+Este catálogo é atualizado regularmente para refletir as mudanças nos dados e nos processos de negócios. Todos os usuários de dados são encorajados a referenciar este documento para garantir o uso adequado e eficaz dos dados.
+
 ## Dados de Acionamentos do CRM.
 - **Descrição**: Registros de interações com clientes cadastradas no CRM.
 
