@@ -1,13 +1,14 @@
-# Dicionário de Dados - ACIONA_CRM
+# Catálogo de Dados - Acionamentos do CRM
 
-## Descrição
-Registros de interações com clientes registradas no CRM.
-
-## Colunas
-| Nome da Coluna    | Tipo de Dados | Descrição                                  | Restrições        |
-|-------------------|---------------|--------------------------------------------|-------------------|
-| id_acionamento    | Inteiro       | Identificador único do acionamento         | PK, não nulo      |
-| id_cliente        | Inteiro       | Identificador único do cliente             | FK, não nulo      |
-| data_acionamento  | Data          | Data e hora do acionamento                 | não nulo          |
-| tipo_acionamento  | String        | Tipo de interação (chamada, email, etc.)   | não nulo          |
-| descricao_acao    | String        | Descrição detalhada da ação realizada      |                   |
+**Objetivo**: Centralizar e prover todos os Dados tratados de Acionamentos do CRM.  
+**Nome da Tabela**: ACIONA_CRM  
+**Autor**: Equipe de Data Analytics, Matheus Alexander.  
+**Descrição**: Registros de interações com clientes registradas no CRM.  
+**Responsável pela Integração**: Equipe de Data Analytics.  
+**Data de Criação**: 2024-06-27  
+**Data de Revisão**: 2024-06-27  
+**Formato**: Tabela SQL  
+**Licença**: Uso interno  
+**Periodicidade de Atualização**: Em batch, a cada hora.  
+**Fonte**: Dados fornecidos por JCA - ACTYON e VCOM.  
+**Palavras-chave**: ACIONAMENTOS, CLIENTES, TABULAÇÕES, DEXPARA.  
