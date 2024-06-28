@@ -7,10 +7,11 @@ Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar
 ## Estrutura do Projeto
 
 - [Documentos](Documentos/): Contém a documentação total do projeto.
-  - [Governança.md](Documentos/Governança%20de%20Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
-  - [Catalogo.md](Documentos/Governança%20de%20Dados/Catálogo/Catálogo%20de%20Dados.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
-  - [Dicionario.md](Documentos/Governança%20de%20Dados/Dicionário): Documento que descreve os objetos físicos (tabelas) no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
-  - [Metadados.md](Documentos/Governança%20de%20Dados/Metadados): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
+  - [Governança](Documentos/Governança%20de%20Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
+  - [Catálogo](Documentos/Governança%20de%20Dados/Catálogo/Catálogo%20de%20Dados.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
+  - [Dicionário](Documentos/Governança%20de%20Dados/Dicionário): Documento que descreve os objetos físicos (tabelas) no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
+  - [Metadados](Documentos/Governança%20de%20Dados/Metadados): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
+  - [Mapeamento das Fontes de Dados](Documentos/Mapeamento%20das%20Fontes%20de%20Dados): Documentos descritivos de todas as fontes de dados que alimentam o DW, contendo: origens, fornecimento, instancias, databases, tabelas e campos.
 - [Environment](Environment/): Contém as variáveis de ambiente para conexão das fontes de dados.
 - [Func](Func/): Contém as funções para auxiliar a pipeline de dados.
 - [Modelagens](Modelagens/): Contém a modelagem conceitual e física (DER).
