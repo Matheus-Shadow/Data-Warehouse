@@ -6,7 +6,9 @@
 **Descrição**: Registros de interações com clientes registradas no CRM.  
 **Responsável pela Integração**: Equipe de Data Analytics.  
 **Data de Criação**: 2024-06-27  
-**Data de Revisão**: 2024-06-27  
+**Data de Revisão**: 2024-06-27 
+peso da tabela : pesada
+eng de atualização : insert
 **Formato**: Tabela SQL  
 **Licença**: Uso interno  
 **Periodicidade de Atualização**: Em batch, a cada hora.  
