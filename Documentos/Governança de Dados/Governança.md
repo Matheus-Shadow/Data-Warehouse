@@ -1,0 +1,1 @@
+Arquivo destinado para políticas e considerações.
