@@ -6,16 +6,21 @@ Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar
 
 ## Estrutura do Projeto
 
-- `Documentos/`: Contém a documentação total do projeto.
-- `Environment/`: Contém as variáveis de ambiente para conexão das fontes de dados.
-- `Func/`: Contém as funções para auxiliar a pipeline de dados.
-- `Modelagens/`: Contém a modelagem conceitural e física (DER).
-- `Pipeline/`: Scripts orquestradores das fontes de dados.
-- `Schema/` : Estrutura dos objetos do sql (tabelas).
-- `Source/` : Fonte de dados.
-- `.gitignore` : Credenciais ocultadas por motivo de segurança.
-- `requerimentos`: Bibliotecas utilizadas no projeto.
-- `README.md`: Este arquivo.
+- [Documentos](Documentos/): Contém a documentação total do projeto.
+  - [Governança](Documentos/Governança%20de%20Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
+  - [Catálogo](Documentos/Governança%20de%20Dados/Catálogo/Catálogo%20de%20Dados.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
+  - [Dicionário](Documentos/Governança%20de%20Dados/Dicionário): Documento que descreve os objetos físicos (tabelas) no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
+  - [Metadados](Documentos/Governança%20de%20Dados/Metadados): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
+  - [Mapeamento das Fontes de Dados](Documentos/Mapeamento%20das%20Fontes%20de%20Dados): Documentos descritivos de todas as fontes de dados que alimentam o DW, contendo: origens, fornecimento, instancias, databases, tabelas e campos.
+- [Environment](Environment/): Contém as variáveis de ambiente para conexão das fontes de dados.
+- [Func](Func/): Contém as funções para auxiliar a pipeline de dados.
+- [Modelagens](Modelagens/): Contém a modelagem conceitual e física (DER).
+- [Pipeline](Pipeline/): Scripts orquestradores das fontes de dados.
+- [Schema](Schema/): Estrutura dos objetos do SQL (tabelas).
+- [Source](Source/): Fonte de dados.
+- [.gitignore](.gitignore): Credenciais ocultadas por motivo de segurança.
+- [requerimentos.txt](requerimentos.txt): Bibliotecas utilizadas no projeto.
+- [README.md](README.md): Este arquivo.
 
 ## Pré-requisitos
 
@@ -23,7 +28,7 @@ Certifique-se de ter os seguintes programas instalados:
 
 - Python 3.12.1
 - ODBC Driver 17 for SQL Server
-- Vscode ou alguma ide de sua preferência
+- Vscode ou alguma IDE de sua preferência
 
 ## Configuração do Ambiente
 
