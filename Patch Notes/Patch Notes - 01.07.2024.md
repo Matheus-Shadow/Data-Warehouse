@@ -23,16 +23,15 @@ Esta atualização inclui correções de bugs críticos, melhorias de performanc
 - Governança: Não sofreu alteração.
 - Catálogo: Não sofreu alteração.
 - Dicionário: Não sofreu alteração.
-- Metadados: Possui as seguintes mudanças, sendo:
+- Metadados: Possui as seguintes mudanças:
 
-- Metadados - Acionamentos do CRM
-   - Anteriormente:
-  
-  | ID_SUB_AC	- BIGINT | 
-  | Código do sub acionamento cadastrado - BIGINT |
+### Metadados - Acionamentos do CRM
+#### Anteriormente:
+| Campo      | Tipo    | Descrição                          |
+|------------|---------|------------------------------------|
+| ID_SUB_AC  | BIGINT  | Código do sub acionamento cadastrado |
 
-   - Agora:
-  
-  | ID_SUB_AC	- INT | 
-  | Código do sub acionamento cadastrado - INT |
-
+#### Agora:
+| Campo      | Tipo    | Descrição                          |
+|------------|---------|------------------------------------|
+| ID_SUB_AC  | INT     | Código do sub acionamento cadastrado |
