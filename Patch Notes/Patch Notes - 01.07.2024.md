@@ -1,40 +1,38 @@
-# Data Warehouse Project
+# Patch Notes - Versão 1.0.0 - 01/07/2024
 
-## Descrição
+## Introdução
+Esta atualização inclui correções de bugs críticos, melhorias de performance e novas funcionalidades.
 
-Este projeto de Data Warehouse (DW) foi desenvolvido para centralizar e analisar dados de diversas fontes. Utiliza o Python para ETL (Extract, Transform, Load) e orquestração de toda a pipeline.
+## Novas Funcionalidades
+- Adicionado suporte para novos formatos de dados.
+- Implementada interface de usuário para configuração de ETL.
 
-## Estrutura do Projeto
+## Melhorias
+- Melhorada a performance de consultas SQL.
+- Interface de usuário aprimorada para melhor usabilidade.
 
-- [Documentos](Documentos/): Contém a documentação total do projeto.
-  - [Governança](Documentos/Governança%20de%20Dados/Governança.md): Documento que descreve os princípios e diretrizes de governança de dados do DW.
-  - [Catálogo](Documentos/Governança%20de%20Dados/Catálogo/Catálogo%20de%20Dados.md): Documento que lista e descreve todas as tabelas e conjuntos de dados disponíveis no DW.
-  - [Dicionário](Documentos/Governança%20de%20Dados/Dicionário): Documento que descreve os objetos físicos (tabelas) no DW, incluindo informações sobre origem dos dados, periodicidade de atualização, etc.
-  - [Metadados](Documentos/Governança%20de%20Dados/Metadados): Documento que detalha cada campo das tabelas do DW, incluindo tipos de dados, descrições e restrições.
-  - [Mapeamento das Fontes de Dados](Documentos/Mapeamento%20das%20Fontes%20de%20Dados): Documentos descritivos de todas as fontes de dados que alimentam o DW, contendo: origens, fornecimento, instancias, databases, tabelas e campos.
-- [Environment](Environment/): Contém as variáveis de ambiente para conexão das fontes de dados.
-- [Func](Func/): Contém as funções para auxiliar a pipeline de dados.
-- [Modelagens](Modelagens/): Contém a modelagem conceitual e física (DER).
-- [Pipeline](Pipeline/): Scripts orquestradores das fontes de dados.
-- [Schema](Schema/): Estrutura dos objetos do SQL (tabelas).
-- [Source](Source/): Fonte de dados.
-- [.gitignore](.gitignore): Credenciais ocultadas por motivo de segurança.
-- [requerimentos.txt](requerimentos.txt): Bibliotecas utilizadas no projeto.
-- [README.md](README.md): Este arquivo.
+## Correções de Bugs
+- Corrigido bug que causava falha na importação de dados CSV.
+- Resolvido problema de sincronização de dados com fontes externas.
 
-## Pré-requisitos
+## Problemas Conhecidos
+- O problema de latência em grandes volumes de dados ainda está sob investigação.
+- A funcionalidade de backup automático pode falhar em algumas condições específicas.
 
-Certifique-se de ter os seguintes programas instalados:
+## Alteração na documentação
+- Governança: Não sofreu alteração.
+- Catálogo: Não sofreu alteração.
+- Dicionário: Não sofreu alteração.
+- Metadados: Possui as seguintes mudanças, sendo:
 
-- Python 3.12.1
-- ODBC Driver 17 for SQL Server
-- Vscode ou alguma IDE de sua preferência
+- Metadados - Acionamentos do CRM
+   - Anteriormente:
+  
+  | ID_SUB_AC	- BIGINT | 
+  | Código do sub acionamento cadastrado - BIGINT |
 
-## Configuração do Ambiente
+   - Agora:
+  
+  | ID_SUB_AC	- INT | 
+  | Código do sub acionamento cadastrado - INT |
 
-### Instalando Dependências
-
-Instale as dependências Python necessárias:
-
-```bash
-pip install -r requerimentos.txt
