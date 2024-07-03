@@ -1,11 +1,12 @@
 Environment/*
 !Environment/git.keeper
 
-.vscode/*
-
 Documentos/*
 !Documentos/git.keeper
 !Documentos/Mapeamento das Fontes de Dados
 !Documentos/DOCS DW.txt
 !Documentos/CADASTRO.xlsx
 !Documentos/Governança de Dados
+
+Pipeline/DOCKER/*
+!Pipeline/DOCKER/.gitkeeper
