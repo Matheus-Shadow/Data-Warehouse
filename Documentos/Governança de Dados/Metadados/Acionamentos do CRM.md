@@ -4,14 +4,14 @@
 
 | Nome da Coluna    | Tipo de Dados | Descrição                                                                                     | Restrições   | Relacionamento               |
 |-------------------|---------------|-----------------------------------------------------------------------------------------------|--------------|------------------------------|
-| EVENTO_ID         | BIGINT        | Id do acionamento no DW                                                                       |              |                              |
+| EVENTO_ID         | BIGINT        | Id do acionamento no DW                                                                       |PK, IDENTITY   |                              |
 | DATA              | DATE          | Data do acionamento no CRM                                                                    |              |                              |
 | CARTEIRA          | NVARCHAR      | Nome da carteira                                                                              |              |                              |
 | OPERAÇÃO          | NVARCHAR      | Nome da operação                                                                              |              |                              |
 | COD_CARTEIRA      | INT           | Código do DW criado para a carteira                                                           |              |                              |
 | COD_OP            | INT           | Código do DW criado para a operação                                                           |              |                              |
 | COD_CRM           | INT           | Código do CRM implantado                                                                      |              |                              |
-| ACIONAMENTO_ID    | BIGINT        | Código único do acionamento no CRM                                                            | PK           |                              |
+| ACIONAMENTO_ID    | BIGINT        | Código único do acionamento no CRM                                                            |              |                              |
 | ID_KEY            | NVARCHAR      | Número de identificação do cliente                                                            |              | CARTEIRA (ID_KEY)            |
 | ID_CRM_OPERADOR   | BIGINT        | ID do operador cadastrado no CRM                                                              |              |                              |
 | NOME_CRM_OPERADOR | NVARCHAR      | Nome do operador cadastrado no CRM                                                            |              |                              |
