@@ -4,7 +4,7 @@
 
 | Nome da Coluna       | Tipo de Dados | Descrição                                          | Restrições | Relacionamento |
 |----------------------|---------------|----------------------------------------------------|------------|----------------|
-| EVENTO_ID            | BIGINT (19)   | ID do acionamento no DW                            |PK,IDENTITY |                |
+| EVENTO_ID            | BIGINT (19)   | ID do acionamento no DW                            |PK, IDENTITY|                |
 | DATA                 | DATE (10)     | Data da discagem                                   |            |                |
 | ID_KEY               | NVARCHAR (20) | Número de identificação do cliente                 |            |                |
 | CPF                  | NVARCHAR (20) | CPF do cliente                                     |            |                |
