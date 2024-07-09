@@ -12,7 +12,7 @@
 | COD_OP                      | INT (8)       | Código do MIS criado para a operação                           |              |                      |
 | COD_CRM                     | INT (8)       | Código do CRM implantado                                       |              |                      |
 | ID_ACORDO                   | BIGINT (19)   | ID do acordo criado no momento de seu cravamento no CRM        |              |                      |
-| ID_KEY                      | NVARCHAR (20) | Número do CPF, devedor_id, identificador_id ou titulo_id       |              |                      |
+| ID_KEY                      | NVARCHAR (20) | Número de identificação do cliente                             |              |                      |
 | USUARIO_ACORDO              | NVARCHAR (50) | Usuário responsável pelo cadastro do acordo                    |              |                      |
 | DATA_VENCIMENTO_ORIGINAL    | DATETIME2 (19)| Data do primeiro vencimento do acordo                          |              |                      |
 | DATA_VENCIMENTO_ATUAL       | DATETIME2 (19)| Data do vencimento atualizado do acordo                        |              |                      |
