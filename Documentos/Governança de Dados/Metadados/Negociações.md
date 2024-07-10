@@ -1,4 +1,4 @@
-# Metadados - Acordos
+# Metadados - ACORDOS
 
 ## Colunas
 

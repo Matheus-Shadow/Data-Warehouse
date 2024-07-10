@@ -1,4 +1,4 @@
-# Metadados - Acionamentos do Discador Inbound
+# Metadados - ACIONA_DISCADOR_RECEPTIVO
 
 ## Colunas
 

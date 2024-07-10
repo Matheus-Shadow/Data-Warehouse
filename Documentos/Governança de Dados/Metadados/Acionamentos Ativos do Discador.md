@@ -1,4 +1,4 @@
-# Metadados - Acionamentos do Discador Outbound
+# Metadados - ACIONA_DISCADOR_ATIVO
 
 ## Colunas
 

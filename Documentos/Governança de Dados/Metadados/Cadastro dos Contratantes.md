@@ -1,4 +1,4 @@
-# Metadados - Cadastro Contratantes (Clientes)
+# Metadados - CADASTRO
 
 ## Colunas
 
