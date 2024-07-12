@@ -1,9 +1,10 @@
 Environment/*
 !Environment/git.keeper
 
-Documentos/*
+Documentos/Demais Documentos do Projeto/Mapeamento - Geral - ODBC.xlsx
+Documentos/Demais Documentos do Projeto/Assessment - MAPEAMENTO TABELAS DW.xlsx
+
 !Documentos/git.keeper
-!Documentos/Demais Documentos do Projeto/Backlog do Produto - DW.xlsx
 !Documentos/Mapeamento das Fontes de Dados
 !Documentos/DOCS DW.txt
 !Documentos/CADASTRO.xlsx
