@@ -1,4 +1,0 @@
-select TOP 10
-A.doc AS ID_KEY
-FROM chamadas 
-WHERE calldate BETWEEN '2024-07-24 08:00:00' AND '2024-07-24 08:30:59'

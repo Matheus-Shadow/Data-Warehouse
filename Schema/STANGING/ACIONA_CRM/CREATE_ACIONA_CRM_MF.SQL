@@ -1,0 +1,20 @@
+CREATE TABLE ACIONA_CRM_MF (
+    EVENTO_ID bigint IDENTITY(1,1) ,
+    DATA date ,
+    COD_CRM int ,
+    ACIONAMENTO_ID bigint ,
+    ID_KEY nvarchar(20) ,
+    ID_CRM_OPERADOR bigint ,
+    NOME_CRM_OPERADOR nvarchar(100) ,
+    ID_AC bigint ,
+    NOME_AC nvarchar(200) ,
+    ID_SUB_AC bigint ,
+    NOME_SUB_AC nvarchar(200) ,
+    INICIO_CHAMADA datetime2 ,
+    FIM_CHAMADA datetime2 ,
+    TELEFONE nvarchar(20) ,
+    INSTANCIA varchar(20) ,
+    BANCO varchar(20) ,
+    ORIGEM varchar(30) ,
+    DATA_INSERT datetime2 
+);
