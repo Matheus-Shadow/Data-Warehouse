@@ -16,7 +16,7 @@ COALESCE(A.dtfim, A.calldate)  AS FIM_CHAMADA,
     '' AS INICIO_POS,
     '' AS FIM_POS,
     A.origem AS TELEFONE,
-    '10.13.101.169' AS INSTANCIA,
+    '10.13.101.41' AS INSTANCIA,
     'replica_mfrflab1' AS BANCO,
     '2CX' AS ORIGEM
 FROM chamadas A 
