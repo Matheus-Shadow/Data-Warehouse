@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{A930FDF7-DCA8-47C1-9AAF-C984B4BEBA8D}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0E511D01-059D-4E40-A4D0-D32090361C8E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=45.77.193.154;User ID=mis_diego;Initial Catalog=dbActyon_MEF;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{52DDE0D9-45C4-4317-91FF-B92CB3D87738}45.77.193.154.dbActyon_MEF.mis_diego;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATarV6oU9pEmpK9rKoKAyYQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD7MWG1nzjkTR6a043h8SfCAAAAAASAAACgAAAAEAAAACID4EotHYONTBLhJ0Z/uFUYAAAAEwiyTf4OTx5LJESwESyRiZpiU15Cq7S9FAAAABEUs1GizFD0fW5KRMi4rygrd3oq</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=45.77.193.154;User ID=mis_diego;Initial Catalog=dbActyon_MEF;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{52DDE0D9-45C4-4317-91FF-B92CB3D87738}45.77.193.154.dbActyon_MEF.mis_diego;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -42,7 +37,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SRVMIS06;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;" />
+          DTS:ConnectionString="Data Source=SRVMIS06;User ID=mis;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA2qNzqCE5sUeP2y8xAAESFwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABzQM886UWs9wF61a0smai/AAAAAASAAACgAAAAEAAAAJ9LuoPCx4emdcR2bU/+YIIgAAAAx1Q0rgQz2GerbuSbTQK+k4iS+aWWC+BAfLBV2dIzPMsUAAAAKZuvzCCIv9kPQ8Bau5NsLXeRWu0</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -968,13 +968,13 @@ WHERE CAST(A.DATA AS DATE) = CAST(GETDATE() AS DATE) AND A.ACIONAMENTO_ID &gt; ?
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="255,42"
-          Id="Package\PIPELINE ALARES STAGING\MAX_CALL_ID_ACTYON_ALARES"
-          TopLeft="5.5,1.31892878301602" />
-        <NodeLayout
-          Size="268,42"
+          Size="268,41.6"
           Id="Package\PIPELINE ALARES STAGING\ACIONA_CRM_ACTYON_ALARES"
           TopLeft="315.111093787408,0" />
+        <NodeLayout
+          Size="255.2,41.6"
+          Id="Package\PIPELINE ALARES STAGING\MAX_CALL_ID_ACTYON_ALARES"
+          TopLeft="5.5,1.31892878301602" />
         <EdgeLayout
           Id="Package\PIPELINE ALARES STAGING.PrecedenceConstraints[Restrição]"
           TopLeft="260.5,21.659464391508">
@@ -1000,10 +1000,10 @@ WHERE CAST(A.DATA AS DATE) = CAST(GETDATE() AS DATE) AND A.ACIONAMENTO_ID &gt; ?
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="589,98"
-          Size="589,141"
+          PanelSize="588.8,97.6"
+          Size="588.8,140.8"
           Id="Package\PIPELINE ALARES STAGING"
-          TopLeft="342.5,151.5" />
+          TopLeft="192.500008195638,136.76666676912" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
