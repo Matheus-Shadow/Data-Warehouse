@@ -1,6 +1,6 @@
 
 # Importa a biblioteca 'requests' para fazer requisições HTTP
-import requests
+import requests, sys ,logging ,os
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 from pandas.plotting import table
@@ -12,6 +12,9 @@ import time
 from datetime import datetime
 import glob
 import requests
+from dotenv import load_dotenv
+import pyodbc
+
 
 
 # Define o token do seu bot do Telegram
@@ -22,9 +25,66 @@ def bot_DW():
     return '7466973761:AAEj-x3A4bGmu7nls3UMrDSvy3JHfzfCj88' , '-1002181876568'
 # Define o chat ID para onde deseja enviar a mensagem (um chat ou usuário específico)
 
-if False:
-    def bot_dash():
+def load_env(env_file):
+    """
+    Carrega variáveis de ambiente do arquivo .env especificado.
+    
+    Args:
+    env_file (str): Caminho para o arquivo .env.
+    
+    Returns:
+    dict: Dicionário contendo as variáveis de ambiente carregadas.
+    """
+    try:
+        load_dotenv(env_file)
+        env_vars = {
+            'SERVER': os.getenv('SERVER_MIS'),
+            'DATABASE': os.getenv('DATABASE_MIS'),
+            'USERNAME': os.getenv('USERNAME_MIS'),
+            'PASSWORD': os.getenv('PASSWORD_MIS'),
+            'DRIVER': os.getenv('DRIVER_MIS'),
+            'PORT': os.getenv('PORT_MIS')
+        }
+        
+        # Logar as variáveis carregadas
+        logging.info(f"Variáveis de ambiente carregadas: {env_vars}")
+        
+        return env_vars
+    except Exception as e:
+        logging.error(f"Erro ao carregar o arquivo .env: {str(e)}")
+        return None
+    
+def connect_to_database(env_vars):
+    """
+    Estabelece uma conexão com o banco de dados utilizando as variáveis de ambiente fornecidas.
 
+    Args:
+    env_vars (dict): Dicionário contendo as variáveis de ambiente necessárias para a conexão.
+
+    Returns:
+    pyodbc.Connection: Objeto de conexão com o banco de dados.
+    """
+    try:
+        # Verificar se todas as variáveis de ambiente necessárias foram carregadas
+        if not all(env_vars.values()):
+            raise ValueError("Certifique-se de que todas as variáveis de ambiente necessárias estejam definidas no arquivo .env.")
+
+        # Construir a string de conexão
+        connection_string = f"DRIVER={env_vars['DRIVER']};SERVER={env_vars['SERVER']},{env_vars['PORT']};DATABASE={env_vars['DATABASE']};UID={env_vars['USERNAME']};PWD={env_vars['PASSWORD']}"
+
+        # Conectar ao banco de dados
+        conn = pyodbc.connect(connection_string)
+
+        logging.info("Conexão ao banco de dados estabelecida.")
+
+        return conn
+
+    except Exception as e:
+        logging.error(f"Erro ao conectar ao banco de dados: {str(e)}")
+        return None
+
+if False:
+    def bot():
         token = '6649662838:AAEG9OmG4JgzMnTOYBcuw3y1trgHojlf0L8'
         chat = -4047640868
 
@@ -35,9 +95,9 @@ if False:
         return "6544006198:AAG8OQSnoIgUJCRzh8mBjQomhWDaqJ6guCM" ,-4089304677 
 
     def bot_metadados():
-        # Token do seu bot do Telegram (obtenha isso com o BotFather)
+            # Token do seu bot do Telegram (obtenha isso com o BotFather)
         return '6015741717:AAHWAHkkglnCr9iTSPckTVsCWxV31bscfIc' , -4095489893
-        # ID do chat ou usuário para o qual você deseja enviar a mensagem
+            # ID do chat ou usuário para o qual você deseja enviar a mensagem
 
     # Define uma função chamada 'send_message' que envia uma mensagem para um chat no Telegram
 def send_message(token, chat_id, message):

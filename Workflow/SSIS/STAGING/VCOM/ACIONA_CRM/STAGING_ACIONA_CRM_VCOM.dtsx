@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/30/2024 7:49:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVMIS06"
+  DTS:CreatorName="MFDIGITAL\robo6.mis"
+  DTS:DTSID="{E0BF6C4E-5476-4E8F-B86C-DABFD0F6C10D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1EA697DA-00F3-4AF0-B396-444B3C91FC96}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[52.179.19.141.MF_cobsystems.mf_consulta]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7F211A27-39A3-4496-9531-1D71D54AA775}"
+      DTS:ObjectName="52.179.19.141.MF_cobsystems.mf_consulta">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=52.179.19.141;User ID=mf_consulta;Initial Catalog=MF_cobsystems;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package1-{7F211A27-39A3-4496-9531-1D71D54AA775}52.179.19.141.MF_cobsystems.mf_consulta;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATarV6oU9pEmpK9rKoKAyYQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAOsTnSbV4e5Pn/8qKvB+zZAAAAAASAAACgAAAAEAAAALIEl0dOwStFBk4j8FWVdecQAAAAGUbzmFUddA8U808jmGUQWhQAAABLu2h/L0D+e2uBi90OnRSvudsyOA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+      DTS:ObjectName="SRVMIS06.DW_MFDIGITAL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVMIS06;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{79770054-247E-4F30-99E8-F76371092E09}"
+      DTS:ObjectName="MAX_CALL_ID_VCOM">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFAC0B24-8976-4A8E-A2BD-E848B7317BF4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MAX_CALL_ID_VCOM">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\PIPELINE VCOM STAGING"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{F983F273-F2BA-498B-AE9D-31BD02EE09ED}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="PIPELINE VCOM STAGING">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{c9d38d00-14d9-41b7-abae-06a9f19f713d}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ACIONA_CRM_VCOM">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="ACIONA_CRM_STAGING"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[ACIONA_CRM_VCOM]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                      connectionManagerRefId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[DATA]"
+                          cachedDataType="dbDate"
+                          cachedName="DATA"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[DATA]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[COD_CRM]"
+                          cachedDataType="i4"
+                          cachedName="COD_CRM"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_CRM]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[COD_CRM]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ACIONAMENTO_ID]"
+                          cachedDataType="i8"
+                          cachedName="ACIONAMENTO_ID"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ACIONAMENTO_ID]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ACIONAMENTO_ID]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ID_KEY]"
+                          cachedDataType="i8"
+                          cachedName="ID_KEY"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ID_CRM_OPERADOR]"
+                          cachedDataType="i8"
+                          cachedName="ID_CRM_OPERADOR"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CRM_OPERADOR]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_CRM_OPERADOR]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[NOME_CRM_OPERADOR]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="NOME_CRM_OPERADOR"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_CRM_OPERADOR]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_CRM_OPERADOR]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ID_AC]"
+                          cachedDataType="i8"
+                          cachedName="ID_AC"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_AC]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[NOME_AC]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="NOME_AC"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_AC]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ID_SUB_AC]"
+                          cachedDataType="i8"
+                          cachedName="ID_SUB_AC"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_SUB_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_SUB_AC]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[NOME_SUB_AC]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="NOME_SUB_AC"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_SUB_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_SUB_AC]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[INICIO_CHAMADA]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="INICIO_CHAMADA"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[FIM_CHAMADA]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="FIM_CHAMADA"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[TELEFONE]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="TELEFONE"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[INSTANCIA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="INSTANCIA"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[BANCO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="BANCO"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[BANCO]" />
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].Columns[ORIGEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ORIGEM"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[EVENTO_ID]"
+                          dataType="i8"
+                          name="EVENTO_ID" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                          dataType="dbDate"
+                          name="DATA" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[COD_CRM]"
+                          dataType="i4"
+                          name="COD_CRM" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ACIONAMENTO_ID]"
+                          dataType="i8"
+                          name="ACIONAMENTO_ID" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                          dataType="wstr"
+                          length="20"
+                          name="ID_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CRM_OPERADOR]"
+                          dataType="i8"
+                          name="ID_CRM_OPERADOR" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_CRM_OPERADOR]"
+                          dataType="wstr"
+                          length="100"
+                          name="NOME_CRM_OPERADOR" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_AC]"
+                          dataType="i8"
+                          name="ID_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_AC]"
+                          dataType="wstr"
+                          length="200"
+                          name="NOME_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_SUB_AC]"
+                          dataType="i8"
+                          name="ID_SUB_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_SUB_AC]"
+                          dataType="wstr"
+                          length="200"
+                          name="NOME_SUB_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                          dataType="wstr"
+                          length="20"
+                          name="TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="INSTANCIA" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="BANCO" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_INSERT]"
+                          dataType="dbTimeStamp2"
+                          name="DATA_INSERT"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="ACIONA_CRM_VCOM"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+  CAST(HC.DATA_CAD AS DATE) AS DATA,
+  CAST('230' AS INT) AS COD_CRM,
+  CAST(HC.COD_HIST_CLI AS bigint) AS ACIONAMENTO_ID,
+  CAST(REPLACE(A.CODIGO_CLIENTE, '.', '') AS BIGINT) AS ID_KEY,
+  CAST(L.COD_LOGIN AS BIGINT) AS ID_CRM_OPERADOR,
+  CAST(L.LOGIN_LOG AS NVARCHAR(100)) AS NOME_CRM_OPERADOR,
+  CAST(O.COD_OCOR AS BIGINT) AS ID_AC,
+  CAST(O.TITULO_OCOR AS NVARCHAR(200)) AS NOME_AC,
+  CAST('' AS BIGINT) AS ID_SUB_AC,
+    CAST(CASE 
+        WHEN SUBSTRING(HC.COMPLEMENTO_HIST_CLI, 1, CHARINDEX(': ', HC.COMPLEMENTO_HIST_CLI)) LIKE '%Recusa%'
+        THEN TRIM(LEFT(SUBSTRING(HC.COMPLEMENTO_HIST_CLI, CHARINDEX('-', HC.COMPLEMENTO_HIST_CLI) + 2, LEN(HC.COMPLEMENTO_HIST_CLI)), CHARINDEX(CASE 
+            WHEN CHARINDEX('-', SUBSTRING(HC.COMPLEMENTO_HIST_CLI, CHARINDEX('-', HC.COMPLEMENTO_HIST_CLI) + 2, LEN(HC.COMPLEMENTO_HIST_CLI))) &gt; 0
+            THEN '-' ELSE ':' END, SUBSTRING(HC.COMPLEMENTO_HIST_CLI, CHARINDEX('-', HC.COMPLEMENTO_HIST_CLI) + 2, LEN(HC.COMPLEMENTO_HIST_CLI))) - 1))
+        WHEN SUBSTRING(HC.COMPLEMENTO_HIST_CLI, 1, CHARINDEX(': ', HC.COMPLEMENTO_HIST_CLI)) NOT LIKE '%Recusa%'
+        THEN ''
+    END AS NVARCHAR(200)) AS NOME_SUB_AC,
+ CAST(HC.DATA_CAD AS DATETIME2(7)) AS INICIO_CHAMADA,
+ CAST(HC.DATA_CAD AS DATETIME2(7)) AS FIM_CHAMADA,
+ CAST(Cast(PT.DDD_TEL as VARCHAR) + Cast(PT.NR_TEL as VARCHAR) AS NVARCHAR(20)) AS TELEFONE,
+ CAST('52.179.19.141' AS VARCHAR(20)) AS INSTANCIA,
+ CAST('MF_cobsystems' AS VARCHAR(20)) AS BANCO,
+ CAST('VCOM' AS NVARCHAR(30)) AS ORIGEM
+from HISTORICOS_CLIENTES HC With(NoLock) 
+  inner join HISTORICOS_CLIENTES_TITULOS HCT With(NoLock) on HC.COD_HIST_CLI = HCT.COD_HIST_CLI 
+  inner join OCORRENCIAS_CLIENTES O With(NoLock) on O.COD_OCOR = HC.COD_OCOR and O.COD_TIPO_OCORRENCIA is not NULL 
+  inner join TITULOS T With(NoLock) on T.COD_TIT = HCT.COD_TIT 
+  inner join v_devedores V With(NoLock) on HC.COD_DEV = V.COD_DEV 
+  left join PESSOAS_TELEFONES PT With(NoLock) on PT.COD_FONE = HC.COD_FONE 
+  left join _SOMA_PARC SP With(NoLock) on SP.COD_TIT = T.COD_TIT 
+  inner join LOGIN L With(NoLock) on L.COD_LOGIN = HC.USUARIO_CAD 
+  inner join 
+  (
+  select P.COD_TIT,
+    Max(A.CUSTOMER_ID) as CUSTOMER_ID,
+    Max(A.CRITERIO_CYBER) as CRITERIO_CYBER,
+    Max(A.CODIGO_CLIENTE) as CODIGO_CLIENTE,
+    Max(A.DATA_ATIVACAO_CLIENTE) as DATA_ATIVACAO_CLIENTE 
+  from PARCELAS P With(NoLock) 
+    inner join AUX_TIM_CYBER A With(NoLock) on A.COD_PARC = P.COD_PARC 
+  group by P.COD_TIT
+  ) A on A.COD_TIT = T.COD_TIT 
+  inner join 
+  (
+  select H.COD_TIT,
+    Max(H.COD_IMP) as COD_IMP 
+  from IMPORTACAO_HISTORICO H With(NoLock) 
+  group by H.COD_TIT
+  ) I on I.COD_TIT = T.COD_TIT 
+  left join BOLETOS_EM BE With(NoLock) on BE.Cod_BEm = HC.COD_BEM 
+  inner join IMPORTACAO IM With(NoLock) on I.COD_IMP = IM.COD_IMP 
+where Cast(HC.DATA_CAD as DATE) = CAST(GETDATE() AS date) AND
+ CAST(HC.COD_HIST_CLI AS bigint)  &gt; ?</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping">"Parâmetro0:Input",{79770054-DB81-4F30-99E8-F76371092E09};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[52.179.19.141.MF_cobsystems.mf_consulta]"
+                      connectionManagerRefId="Package.ConnectionManagers[52.179.19.141.MF_cobsystems.mf_consulta]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                          name="DATA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[COD_CRM]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CRM]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[COD_CRM]"
+                          name="COD_CRM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ACIONAMENTO_ID]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ACIONAMENTO_ID]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ACIONAMENTO_ID]"
+                          name="ACIONAMENTO_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_KEY]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]"
+                          name="ID_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_CRM_OPERADOR]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CRM_OPERADOR]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_CRM_OPERADOR]"
+                          name="ID_CRM_OPERADOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_CRM_OPERADOR]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CRM_OPERADOR]"
+                          length="100"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_CRM_OPERADOR]"
+                          name="NOME_CRM_OPERADOR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_AC]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_AC]"
+                          name="ID_AC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_AC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_AC]"
+                          length="200"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_AC]"
+                          name="NOME_AC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_SUB_AC]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_SUB_AC]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ID_SUB_AC]"
+                          name="ID_SUB_AC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_SUB_AC]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_SUB_AC]"
+                          length="200"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[NOME_SUB_AC]"
+                          name="NOME_SUB_AC"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          name="INICIO_CHAMADA"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          name="FIM_CHAMADA"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[TELEFONE]"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]"
+                          name="TELEFONE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                          name="INSTANCIA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                          name="BANCO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                          length="30"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                          name="ORIGEM"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                          dataType="dbDate"
+                          name="DATA" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CRM]"
+                          dataType="i4"
+                          name="COD_CRM" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ACIONAMENTO_ID]"
+                          dataType="i8"
+                          name="ACIONAMENTO_ID" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_KEY]"
+                          dataType="i8"
+                          name="ID_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CRM_OPERADOR]"
+                          dataType="i8"
+                          name="ID_CRM_OPERADOR" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CRM_OPERADOR]"
+                          dataType="wstr"
+                          length="100"
+                          name="NOME_CRM_OPERADOR" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_AC]"
+                          dataType="i8"
+                          name="ID_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_AC]"
+                          dataType="wstr"
+                          length="200"
+                          name="NOME_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_SUB_AC]"
+                          dataType="i8"
+                          name="ID_SUB_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_SUB_AC]"
+                          dataType="wstr"
+                          length="200"
+                          name="NOME_SUB_AC" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[TELEFONE]"
+                          dataType="wstr"
+                          length="20"
+                          name="TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="INSTANCIA" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="BANCO" />
+                        <externalMetadataColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                          dataType="wstr"
+                          length="30"
+                          name="ORIGEM" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                          dataType="dbDate"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                          name="DATA" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CRM]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CRM]"
+                          name="COD_CRM" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ACIONAMENTO_ID]"
+                          dataType="i8"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ACIONAMENTO_ID]"
+                          name="ACIONAMENTO_ID" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_KEY]"
+                          dataType="i8"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_KEY]"
+                          name="ID_KEY" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CRM_OPERADOR]"
+                          dataType="i8"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CRM_OPERADOR]"
+                          name="ID_CRM_OPERADOR" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CRM_OPERADOR]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CRM_OPERADOR]"
+                          name="NOME_CRM_OPERADOR" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_AC]"
+                          dataType="i8"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_AC]"
+                          name="ID_AC" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_AC]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_AC]"
+                          name="NOME_AC" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_SUB_AC]"
+                          dataType="i8"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_SUB_AC]"
+                          name="ID_SUB_AC" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_SUB_AC]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_SUB_AC]"
+                          name="NOME_SUB_AC" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          name="INICIO_CHAMADA"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          name="FIM_CHAMADA"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[TELEFONE]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[TELEFONE]"
+                          name="TELEFONE" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                          name="INSTANCIA" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                          name="BANCO" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                          name="ORIGEM" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversão de Dados"
+                  name="Conversão de Dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                      name="Entrada de Conversão de Dados">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[ORIGEM]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="ORIGEM"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                      exclusionGroup="1"
+                      name="Saída de Conversão de Dados"
+                      synchronousInputId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          length="30"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]"
+                          name="ORIGEM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Conversão de Dados"
+                      synchronousInputId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM.Paths[Saída de Conversão de Dados]"
+                  endId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Conversão de Dados"
+                  startId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+                <path
+                  refId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM.Paths[Saída de Origem OLE DB]"
+                  endId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\PIPELINE VCOM STAGING\MAX_CALL_ID_VCOM"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{5d846f5e-ef77-40f1-95bb-6874c38c5e10}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MAX_CALL_ID_VCOM"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="select ISNULL(MAX(ACIONAMENTO_ID), 0) AS MAX_CALL_ID_VCOM From ACIONA_CRM_VCOM WITH (NOLOCK)&#xA;WHERE ORIGEM = 'VCOM' AND BANCO = 'MF_cobsystems' AND INSTANCIA = '52.179.19.141'&#xA;AND DATA = CAST(GETDATE() AS DATE)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MAX_CALL_ID_VCOM"
+                SQLTask:DtsVariableName="User::MAX_CALL_ID_VCOM" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::MAX_CALL_ID_VCOM"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\PIPELINE VCOM STAGING.PrecedenceConstraints[Restrição]"
+          DTS:CreationName=""
+          DTS:DTSID="{09884C32-9553-4721-9CC8-1FF3F0124411}"
+          DTS:From="Package\PIPELINE VCOM STAGING\MAX_CALL_ID_VCOM"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição"
+          DTS:To="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\PIPELINE VCOM STAGING\MAX_CALL_ID_VCOM"
+          TopLeft="5.5,6.58189319332638" />
+        <EdgeLayout
+          Id="Package\PIPELINE VCOM STAGING.PrecedenceConstraints[Restrição]"
+          TopLeft="215.5,27.0409465966632">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.37705884946,0"
+              Start="0,0"
+              End="60.87705884946,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="60.87705884946,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="227,42"
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM"
+          TopLeft="283.87705884946,5.5" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="516,104"
+          Size="516,147"
+          Id="Package\PIPELINE VCOM STAGING"
+          TopLeft="110,163" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM"
+          TopLeft="107.738093632673,142.499997876585" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING"
+          TopLeft="709.99998640683,146.033331154221" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\Conversão de Dados"
+          TopLeft="384.999994263053,142.666664530834" />
+        <EdgeLayout
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM.Paths[Saída de Origem OLE DB]"
+          TopLeft="314.738093632673,163.58333120371">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.26190063038,0"
+              Start="0,0"
+              End="62.76190063038,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.76190063038,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM.Paths[Saída de Conversão de Dados]"
+          TopLeft="566.999994263053,165.349997842528">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="142.999992143777,0"
+              Start="0,0"
+              End="135.499992143777,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="135.499992143777,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_VCOM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PIPELINE VCOM STAGING\ACIONA_CRM_VCOM\ACIONA_CRM_STAGING">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

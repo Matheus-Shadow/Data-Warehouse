@@ -1,0 +1,1144 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/6/2024 11:32:02 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVMIS06"
+  DTS:CreatorName="MFDIGITAL\robo6.mis"
+  DTS:DTSID="{67F3004B-3E2E-4C34-809F-E781C433DD4B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{00601DF9-A6F6-4522-B589-415B6DA44F4E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[2CX_BD_1_replica_mfrflab1_read]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{1BFD97CA-D80D-4E91-9E25-650840E7FC6C}"
+      DTS:ObjectName="2CX_BD_1_replica_mfrflab1_read">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=2CX_BD_1_replica_mfrflab1_read;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+      DTS:ObjectName="SRVMIS06.DW_MFDIGITAL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVMIS06;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{DB497CEA-096C-409C-9ED4-838D924573FE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[TELEFONE]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="TELEFONE"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[TELEFONE]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[PERGUNTAS]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="PERGUNTAS"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[PERGUNTAS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[INSTANCIA]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="INSTANCIA"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INSTANCIA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[BANCO]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="BANCO"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[BANCO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[ORIGEM]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ORIGEM"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ORIGEM]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[INTEGRACAO_PLATAFORMA]"
+                      cachedDataType="wstr"
+                      cachedLength="26"
+                      cachedName="INTEGRACAO_PLATAFORMA"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[TELEFONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[TELEFONE]"
+                      name="TELEFONE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[TELEFONE]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERGUNTAS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERGUNTAS]"
+                      name="PERGUNTAS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[PERGUNTAS]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INSTANCIA]"
+                      name="INSTANCIA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INSTANCIA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[BANCO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[BANCO]"
+                      name="BANCO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[BANCO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]"
+                      name="ORIGEM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ORIGEM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INTEGRACAO_PLATAFORMA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INTEGRACAO_PLATAFORMA]"
+                      name="INTEGRACAO_PLATAFORMA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[PESQUISA_2CX]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                  connectionManagerRefId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[DATA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[DATA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_KEY]"
+                      cachedDataType="numeric"
+                      cachedName="ID_KEY"
+                      cachedPrecision="20"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_KEY]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CALL_ID]"
+                      cachedDataType="numeric"
+                      cachedName="CALL_ID"
+                      cachedPrecision="20"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CALL_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CALL_ID]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_CAMPANHA]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="ID_CAMPANHA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_CAMPANHA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CAMPANHA]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="CAMPANHA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CAMPANHA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CAMPANHA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[INTEGRACAO_ID]"
+                      cachedDataType="numeric"
+                      cachedName="INTEGRACAO_ID"
+                      cachedPrecision="20"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INTEGRACAO_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_ID]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[RESPOSTAS]"
+                      cachedDataType="i8"
+                      cachedName="RESPOSTAS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[RESPOSTAS]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[RESPOSTAS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[EVENTO_ID_PLATAFORMA]"
+                      cachedDataType="numeric"
+                      cachedName="EVENTO_ID_PLATAFORMA"
+                      cachedPrecision="20"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[EVENTO_ID_PLATAFORM]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[EVENTO_ID_PLATAFORMA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TELEFONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TELEFONE"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[TELEFONE]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[PERGUNTAS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="PERGUNTAS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERGUNTAS]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[PERGUNTAS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[INSTANCIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="INSTANCIA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INSTANCIA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[BANCO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="BANCO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[BANCO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ORIGEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ORIGEM"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[ORIGEM]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[INTEGRACAO_PLATAFORMA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="INTEGRACAO_PLATAFORMA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INTEGRACAO_PLATAFORMA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[INTEGRACAO_PLATAFORMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[EVENTO_ID]"
+                      dataType="i8"
+                      name="EVENTO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[EVENTO_ID_PLATAFORM]"
+                      dataType="i8"
+                      name="EVENTO_ID_PLATAFORM" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                      dataType="dbDate"
+                      name="DATA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                      dataType="i8"
+                      name="ID_KEY" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CALL_ID]"
+                      dataType="i8"
+                      name="CALL_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      dataType="i4"
+                      name="ID_CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CAMPANHA]"
+                      dataType="wstr"
+                      length="300"
+                      name="CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TELEFONE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INTEGRACAO_ID]"
+                      dataType="i8"
+                      name="INTEGRACAO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PERGUNTAS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="PERGUNTAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[RESPOSTAS]"
+                      dataType="i4"
+                      name="RESPOSTAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INTEGRACAO_PLATAFORMA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INTEGRACAO_PLATAFORMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INSTANCIA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BANCO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ORIGEM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server."
+              name="PESQUISA 2CX"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL usada pelo componente para extrair os dados."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    EVENTO_ID_PLATAFORMA,
+    DATA,
+    ID_KEY,
+    CALL_ID,
+    ID_CAMPANHA,
+    CAST(CAMPANHA AS NCHAR(200)) AS CAMPANHA,
+    CAST(TELEFONE AS NCHAR(20)) AS TELEFONE,
+    INTEGRACAO_ID,
+    PERGUNTAS,
+    RESPOSTAS,
+    INTEGRACAO_PLATAFORMA,
+    CAST(INSTANCIA AS CHAR(10)) AS INSTANCIA,
+    BANCO,
+    ORIGEM
+FROM (
+    SELECT 
+        CAST(REPLACE(extras.uniqueid, '.', '') AS UNSIGNED) AS EVENTO_ID_PLATAFORMA,
+        CAST(extras.calldate AS DATE) AS DATA,
+        CAST(REPLACE(extras.valor4, '.', '') AS UNSIGNED) AS ID_KEY,
+        CAST(REPLACE(extras.uniqueid, '.', '') AS UNSIGNED) AS CALL_ID,
+        extras.identificador4 AS ID_CAMPANHA,
+        q.nome AS CAMPANHA,
+        c.origem AS TELEFONE,
+        CAST(REPLACE(extras.valor3, '.', '') AS UNSIGNED) AS INTEGRACAO_ID,
+        extras.info AS PERGUNTAS,
+        CASE 
+            WHEN extras.valor IS NULL OR extras.valor = '' THEN NULL
+            WHEN CAST(extras.valor AS UNSIGNED) &gt; 10 AND LEFT(extras.valor, 2) = '10' THEN 10
+            WHEN CAST(extras.valor AS UNSIGNED) &gt; 10 THEN CAST(LEFT(extras.valor, 1) AS UNSIGNED)
+            ELSE CAST(extras.valor AS UNSIGNED)
+        END AS RESPOSTAS,
+        CASE 
+            WHEN extras.valor5 = 45100 THEN 'Humano ASPECT' 
+            WHEN extras.valor5 = 45200 THEN 'Humano OLOS' 
+            WHEN extras.valor5 = 45300 THEN 'AGV OLOS' 
+            ELSE 'AGV 2CX' 
+        END AS INTEGRACAO_PLATAFORMA,
+        CAST('10.13.101.41' AS CHAR(40)) AS INSTANCIA,
+        CAST('replica_mfrflab1' AS NCHAR(100)) AS BANCO,
+        CAST('2CX' AS CHAR(20)) AS ORIGEM
+    FROM `chamadas_extra_info` extras
+    LEFT JOIN chamadas c ON extras.uniqueid = c.uniqueid 
+    LEFT JOIN queues q ON extras.identificador4 = q.fila
+    WHERE identificador3 = "Pesquisa de Satisfacao"
+      AND extras.calldate &gt;= CURDATE() - INTERVAL 1 DAY AND extras.calldate &lt; CURDATE()
+    
+    UNION ALL
+    
+    SELECT 
+        CAST(REPLACE(extras.uniqueid, '.', '') AS UNSIGNED) AS EVENTO_ID_PLATAFORMA,
+        CAST(extras.calldate AS DATE) AS DATA,
+        CAST(REPLACE(extras.valor4, '.', '') AS UNSIGNED) AS ID_KEY,
+        CAST(REPLACE(extras.uniqueid, '.', '') AS UNSIGNED) AS CALL_ID,
+        extras.identificador4 AS ID_CAMPANHA,
+        q.nome AS CAMPANHA,
+        c.origem AS TELEFONE,
+        CAST(REPLACE(extras.valor3, '.', '') AS UNSIGNED) AS INTEGRACAO_ID,
+        extras.info2 AS PERGUNTAS,  -- Alterado para info2
+        CASE 
+            WHEN extras.valor2 IS NULL OR extras.valor2 = '' THEN NULL
+            WHEN CAST(extras.valor2 AS UNSIGNED) &gt; 10 AND LEFT(extras.valor2, 2) = '10' THEN 10
+            WHEN CAST(extras.valor2 AS UNSIGNED) &gt; 10 THEN CAST(LEFT(extras.valor2, 1) AS UNSIGNED)
+            ELSE CAST(extras.valor2 AS UNSIGNED)
+        END AS RESPOSTAS,
+        CASE 
+            WHEN extras.valor5 = 45100 THEN 'Humano ASPECT' 
+            WHEN extras.valor5 = 45200 THEN 'Humano OLOS' 
+            WHEN extras.valor5 = 45300 THEN 'AGV OLOS' 
+            ELSE 'AGV 2CX' 
+        END AS INTEGRACAO_PLATAFORMA,
+        CAST('10.13.101.41' AS CHAR(40)) AS INSTANCIA,
+        CAST('replica_mfrflab1' AS NCHAR(100)) AS BANCO,
+        CAST('2CX' AS CHAR(20)) AS ORIGEM
+    FROM `chamadas_extra_info` extras
+    LEFT JOIN chamadas c ON extras.uniqueid = c.uniqueid 
+    LEFT JOIN queues q ON extras.identificador4 = q.fila
+    WHERE identificador3 = "Pesquisa de Satisfacao"
+      AND extras.calldate &gt;= CURDATE() - INTERVAL 1 DAY AND extras.calldate &lt; CURDATE()
+) AS CombinedResults;</property>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">10000</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica a permissão para que as colunas externas que não são de cadeias de caracteres sejam convertidas implicitamente em cadeias de caracteres nas colunas de saída."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="O nome da tabela de banco de dados de Origem."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique o modo para recuperar informações da coluna externa"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[2CX_BD_1_replica_mfrflab1_read]"
+                  connectionManagerRefId="Package.ConnectionManagers[2CX_BD_1_replica_mfrflab1_read]"
+                  description="Gerenciador de conexões gerenciadas"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET]"
+                  name="Saída do de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[EVENTO_ID_PLATAFORMA]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[EVENTO_ID_PLATAFORMA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[EVENTO_ID_PLATAFORMA]"
+                      name="EVENTO_ID_PLATAFORMA"
+                      precision="20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[DATA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[DATA]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[DATA]"
+                      name="DATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_KEY]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ID_KEY]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_KEY]"
+                      name="ID_KEY"
+                      precision="20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CALL_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[CALL_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CALL_ID]"
+                      name="CALL_ID"
+                      precision="20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_CAMPANHA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ID_CAMPANHA]"
+                      length="64"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ID_CAMPANHA]"
+                      name="ID_CAMPANHA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CAMPANHA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[CAMPANHA]"
+                      length="300"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[CAMPANHA]"
+                      name="CAMPANHA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[TELEFONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[TELEFONE]"
+                      length="30"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[TELEFONE]"
+                      name="TELEFONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_ID]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INTEGRACAO_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_ID]"
+                      name="INTEGRACAO_ID"
+                      precision="20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[PERGUNTAS]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[PERGUNTAS]"
+                      length="64"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[PERGUNTAS]"
+                      name="PERGUNTAS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[RESPOSTAS]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[RESPOSTAS]"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[RESPOSTAS]"
+                      name="RESPOSTAS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INTEGRACAO_PLATAFORMA]"
+                      length="26"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]"
+                      name="INTEGRACAO_PLATAFORMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INSTANCIA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INSTANCIA]"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[INSTANCIA]"
+                      name="INSTANCIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[BANCO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[BANCO]"
+                      length="150"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[BANCO]"
+                      name="BANCO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ORIGEM]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ORIGEM]"
+                      length="40"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].Columns[ORIGEM]"
+                      name="ORIGEM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[EVENTO_ID_PLATAFORMA]"
+                      dataType="numeric"
+                      name="EVENTO_ID_PLATAFORMA"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[DATA]"
+                      dataType="dbTimeStamp"
+                      name="DATA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ID_KEY]"
+                      dataType="numeric"
+                      name="ID_KEY"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[CALL_ID]"
+                      dataType="numeric"
+                      name="CALL_ID"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ID_CAMPANHA]"
+                      dataType="wstr"
+                      length="64"
+                      name="ID_CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[CAMPANHA]"
+                      dataType="wstr"
+                      length="300"
+                      name="CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[TELEFONE]"
+                      dataType="wstr"
+                      length="30"
+                      name="TELEFONE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INTEGRACAO_ID]"
+                      dataType="numeric"
+                      name="INTEGRACAO_ID"
+                      precision="20" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[PERGUNTAS]"
+                      dataType="wstr"
+                      length="64"
+                      name="PERGUNTAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[RESPOSTAS]"
+                      dataType="i8"
+                      name="RESPOSTAS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INTEGRACAO_PLATAFORMA]"
+                      dataType="wstr"
+                      length="26"
+                      name="INTEGRACAO_PLATAFORMA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[INSTANCIA]"
+                      dataType="wstr"
+                      length="20"
+                      name="INSTANCIA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[BANCO]"
+                      dataType="wstr"
+                      length="150"
+                      name="BANCO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET].ExternalColumns[ORIGEM]"
+                      dataType="wstr"
+                      length="40"
+                      name="ORIGEM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[EVENTO_ID_PLATAFORMA]"
+                      dataType="numeric"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[EVENTO_ID_PLATAFORMA]"
+                      name="EVENTO_ID_PLATAFORMA"
+                      precision="20" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[DATA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[DATA]"
+                      name="DATA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ID_KEY]"
+                      dataType="numeric"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ID_KEY]"
+                      name="ID_KEY"
+                      precision="20" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[CALL_ID]"
+                      dataType="numeric"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[CALL_ID]"
+                      name="CALL_ID"
+                      precision="20" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ID_CAMPANHA]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ID_CAMPANHA]"
+                      name="ID_CAMPANHA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[CAMPANHA]"
+                      dataType="wstr"
+                      length="300"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[CAMPANHA]"
+                      name="CAMPANHA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[TELEFONE]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[TELEFONE]"
+                      name="TELEFONE" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INTEGRACAO_ID]"
+                      dataType="numeric"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INTEGRACAO_ID]"
+                      name="INTEGRACAO_ID"
+                      precision="20" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[PERGUNTAS]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[PERGUNTAS]"
+                      name="PERGUNTAS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[RESPOSTAS]"
+                      dataType="i8"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[RESPOSTAS]"
+                      name="RESPOSTAS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]"
+                      dataType="wstr"
+                      length="26"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INTEGRACAO_PLATAFORMA]"
+                      name="INTEGRACAO_PLATAFORMA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INSTANCIA]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[INSTANCIA]"
+                      name="INSTANCIA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[BANCO]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[BANCO]"
+                      name="BANCO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ORIGEM]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ORIGEM]"
+                      name="ORIGEM" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados.Paths[Saída de Conversão de Dados]"
+              endId="Package\Tarefa Fluxo de Dados\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados.Paths[Saída do de Origem do ADO NET]"
+              endId="Package\Tarefa Fluxo de Dados\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Saída do de Origem do ADO NET"
+              startId="Package\Tarefa Fluxo de Dados\PESQUISA 2CX.Outputs[Saída do de Origem do ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Tarefa Fluxo de Dados"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tarefa Fluxo de Dados">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Tarefa Fluxo de Dados\PESQUISA 2CX"
+          TopLeft="237,328" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Tarefa Fluxo de Dados\Conversão de Dados"
+          TopLeft="375,216" />
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída do de Origem do ADO NET]"
+          TopLeft="317,328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,-70"
+              Start="0,0"
+              End="120,-62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-37.6339869281046" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-37.6339869281046"
+                    Point2="0,-41.6339869281046"
+                    Point3="4,-41.6339869281046" />
+                  <mssgle:LineSegment
+                    End="116,-41.6339869281046" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116,-41.6339869281046"
+                    Point2="120,-41.6339869281046"
+                    Point3="120,-45.6339869281046" />
+                  <mssgle:LineSegment
+                    End="120,-62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Tarefa Fluxo de Dados\Destino OLE DB"
+          TopLeft="529.5,329.5" />
+        <EdgeLayout
+          Id="Package\Tarefa Fluxo de Dados.Paths[Saída de Conversão de Dados]"
+          TopLeft="495,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114,71.5"
+              Start="0,0"
+              End="114,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9738562091503" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.9738562091503"
+                    Point2="0,28.9738562091503"
+                    Point3="4,28.9738562091503" />
+                  <mssgle:LineSegment
+                    End="110,28.9738562091503" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110,28.9738562091503"
+                    Point2="114,28.9738562091503"
+                    Point3="114,32.9738562091503" />
+                  <mssgle:LineSegment
+                    End="114,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\PESQUISA 2CX">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarefa Fluxo de Dados\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

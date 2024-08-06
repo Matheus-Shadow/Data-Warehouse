@@ -1,0 +1,1347 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/29/2024 3:00:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVMIS06"
+  DTS:CreatorName="MFDIGITAL\robo6.mis"
+  DTS:DTSID="{3D74FA39-234A-4D0D-80C0-2F3B0648FD7A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="STAGING_ACIONA_DISCADOR_ATIVO_ASPECT"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{0A0F88CE-1DBC-4087-A5C4-910A189B0C11}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.12.101.21.detail_epro.mis_mf]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D71C5D18-E482-4F0C-8941-CFCDB18D6BF8}"
+      DTS:ObjectName="10.12.101.21.detail_epro.mis_mf">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.12.101.21;User ID=mis_mf;Initial Catalog=detail_epro;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-Package-{D71C5D18-E482-4F0C-8941-CFCDB18D6BF8}10.12.101.21.detail_epro.mis_mf;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATarV6oU9pEmpK9rKoKAyYQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACyHsQnHvcoDJmItKds+x8EAAAAAASAAACgAAAAEAAAAJ79MWxxFneZfTzUzAG4FG4oAAAAnAvrQpa4QULFUZ7sPLxJ8bjd6FnDXk3hydogQfmh+IsucT+TKANb3BQAAADzusL6Z6NOqGA9X9zdzX0m9U1oIA</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+      DTS:ObjectName="SRVMIS06.DW_MFDIGITAL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVMIS06;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{D80A193B-7553-4A7A-A399-70CF2B223B7F}"
+      DTS:ObjectName="MAX_CALL_ID_ASPECT">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C8285848-3563-44CD-8796-787A315A7AF3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="MAX_CALL_ID_ASPECT">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Contêiner da Sequência 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Contêiner da Sequência"
+      DTS:DTSID="{ea9f3afe-c061-4f57-8dc3-eee4c74bd8ac}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Contêiner da Sequência 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{215c0b7f-d4ef-4bd4-ae09-89a6a42d9757}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ACIONA_DISCADOR_ATIVO_ASPECT"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origem OLE DB"
+                  name="ACIONA_DISCADOR_ATIVO_ASPECT"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+    CAST(DateAdd(HOUR, - 3, A.CallStartDt) AS DATE) AS DATA,
+    CAST(Replace([C].[Param3], '.', '') as [varchar](20)) AS ID_KEY,
+    CAST(C.Param2 AS varchar(20)) AS CPF,
+    A.User_Id AS ID_AGENTE,
+    CONCAT(E.User_F_Name,' ',E.User_L_Name) AS AGENTE,
+    CAST(CONCAT(CAST(A.SeqNum AS VARCHAR(10)), CAST(A.CallId AS VARCHAR(10))) AS BIGINT) AS CALL_ID,
+    D.Service_Id AS ID_CAMPANHA,
+    D.Service_c AS NOME_CAMPANHA,
+    F.Disp_Id AS ID_TABULACAO,
+    F.Disposition_Desc AS NOME_TABULACAO,
+    CAST(C.Param8 AS varchar(500)) AS MAILING,
+    CAST(G.ResourceGroupDesc  as varchar(260))AS ROTA,
+    DateAdd(HOUR, - 3, A.CallStartDt) AS INICIO_CHAMADA,
+    DateAdd(HOUR, - 3, A.EndGaurdDt) AS FIM_CHAMADA,
+    DateAdd(HOUR, - 3, B.ConnClearDt) AS INICIO_POS,
+    DateAdd(HOUR, - 3, B.WrapEndDt) AS FIM_POS,
+    CAST(A.DialedNum as varchar(20)) AS TELEFONE,
+    '10.12.101.21' AS INSTANCIA,
+    'detail_epro' AS BANCO,
+   Cast('ASPECT' as varchar(30)) AS ORIGEM
+
+
+FROM detail_epro..Calldetail A WITH (NOLOCK)
+INNER JOIN detail_epro..AODCallDetail B WITH (NOLOCK) ON A.CallId = B.CallId AND A.SeqNum = B.SeqNum
+LEFT JOIN detail_epro..MediaDataDetail C WITH (NOLOCK) ON A.CallId = C.CallId AND A.SeqNum = C.SeqNum
+LEFT JOIN config_epro.dbo.Service D WITH (NOLOCK) ON A.Service_Id = D.Service_Id
+LEFT JOIN config_epro..Users E WITH (NOLOCK) ON A.User_Id = E.User_Id
+LEFT JOIN config_epro..Disposition F WITH (NOLOCK) ON F.Disp_Id = B.AgentDispId
+LEFT JOIN resource..ResourceGroup G WITH (NOLOCK) ON A.ResourceGroup_Id = G.ResourceGroup_Id 
+WHERE CAST(DateAdd(HOUR, - 3, A.CallStartDt) AS DATE) = 
+CAST(GETDATE() AS DATE) AND CAST(CONCAT(CAST(A.SeqNum AS VARCHAR(10)), CAST(A.CallId AS VARCHAR(10))) AS BIGINT) &gt; ?</property>
+                    <property
+                      dataType="System.String"
+                      description="A variável que contém o comando SQL a ser executado."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                      name="ParameterMapping">"Parâmetro0:Input",{D80A193B-8AAC-4A7A-A399-70CF2B223B7F};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[10.12.101.21.detail_epro.mis_mf]"
+                      connectionManagerRefId="Package.ConnectionManagers[10.12.101.21.detail_epro.mis_mf]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB]"
+                      name="Saída de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                          name="DATA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_KEY]"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]"
+                          name="ID_KEY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CALL_ID]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[CALL_ID]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CALL_ID]"
+                          name="CALL_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CPF]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[CPF]"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CPF]"
+                          name="CPF"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_AGENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_AGENTE]"
+                          length="64"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_AGENTE]"
+                          name="ID_AGENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[AGENTE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[AGENTE]"
+                          length="250"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[AGENTE]"
+                          name="AGENTE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CAMPANHA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]"
+                          name="ID_CAMPANHA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_CAMPANHA]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CAMPANHA]"
+                          length="80"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_CAMPANHA]"
+                          name="NOME_CAMPANHA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_TABULACAO]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_TABULACAO]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_TABULACAO]"
+                          name="ID_TABULACAO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_TABULACAO]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_TABULACAO]"
+                          length="100"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_TABULACAO]"
+                          name="NOME_TABULACAO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[MAILING]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[MAILING]"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[MAILING]"
+                          name="MAILING"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ROTA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ROTA]"
+                          length="260"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ROTA]"
+                          name="ROTA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          name="INICIO_CHAMADA"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          name="FIM_CHAMADA"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_POS]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_POS]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_POS]"
+                          name="INICIO_POS"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_POS]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_POS]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_POS]"
+                          name="FIM_POS"
+                          scale="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[TELEFONE]"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]"
+                          name="TELEFONE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                          name="INSTANCIA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                          name="BANCO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                          length="30"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                          name="ORIGEM"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                          dataType="dbDate"
+                          name="DATA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_KEY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="ID_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[CALL_ID]"
+                          dataType="i8"
+                          name="CALL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[CPF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="CPF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_AGENTE]"
+                          dataType="wstr"
+                          length="16"
+                          name="ID_AGENTE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[AGENTE]"
+                          dataType="wstr"
+                          length="121"
+                          name="AGENTE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CAMPANHA]"
+                          dataType="i4"
+                          name="ID_CAMPANHA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_CAMPANHA]"
+                          dataType="wstr"
+                          length="80"
+                          name="NOME_CAMPANHA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_TABULACAO]"
+                          dataType="i4"
+                          name="ID_TABULACAO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_TABULACAO]"
+                          dataType="wstr"
+                          length="100"
+                          name="NOME_TABULACAO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[MAILING]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="MAILING" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ROTA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="260"
+                          name="ROTA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_CHAMADA"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_CHAMADA"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INICIO_POS]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_POS"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[FIM_POS]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_POS"
+                          scale="3" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          name="INSTANCIA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="BANCO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ORIGEM" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                          dataType="dbDate"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                          name="DATA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_KEY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_KEY]"
+                          name="ID_KEY" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[CPF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[CPF]"
+                          name="CPF" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_AGENTE]"
+                          dataType="wstr"
+                          length="16"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_AGENTE]"
+                          name="ID_AGENTE" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[AGENTE]"
+                          dataType="wstr"
+                          length="121"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[AGENTE]"
+                          name="AGENTE" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[CALL_ID]"
+                          dataType="i8"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[CALL_ID]"
+                          name="CALL_ID" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CAMPANHA]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CAMPANHA]"
+                          name="ID_CAMPANHA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CAMPANHA]"
+                          dataType="wstr"
+                          length="80"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_CAMPANHA]"
+                          name="NOME_CAMPANHA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_TABULACAO]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_TABULACAO]"
+                          name="ID_TABULACAO" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_TABULACAO]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_TABULACAO]"
+                          name="NOME_TABULACAO" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[MAILING]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[MAILING]"
+                          name="MAILING" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ROTA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="260"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ROTA]"
+                          name="ROTA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_CHAMADA]"
+                          name="INICIO_CHAMADA"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_CHAMADA]"
+                          name="FIM_CHAMADA"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_POS]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INICIO_POS]"
+                          name="INICIO_POS"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_POS]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[FIM_POS]"
+                          name="FIM_POS"
+                          scale="3" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[TELEFONE]"
+                          name="TELEFONE" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="12"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                          name="INSTANCIA" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                          name="BANCO" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                          name="ORIGEM" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="ACIONA_DISCADOR_ATIVO_DW"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[dbo].[ACIONA_DISCADOR_ATIVO_ASPECT]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                      connectionManagerRefId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[DATA]"
+                          cachedDataType="dbDate"
+                          cachedName="DATA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[DATA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ID_KEY_CONVERT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="ID_KEY_CONVERT"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[ID_KEY_CONVERT]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[CALL_ID_CONVERT]"
+                          cachedDataType="i8"
+                          cachedName="CALL_ID_CONVERT"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CALL_ID]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[CALL_ID_CONVERT]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[CPF]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CPF"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CPF]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ID_CAMPANHA]"
+                          cachedDataType="i4"
+                          cachedName="ID_CAMPANHA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[NOME_CAMPANHA]"
+                          cachedDataType="wstr"
+                          cachedLength="80"
+                          cachedName="NOME_CAMPANHA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_CAMPANHA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_CAMPANHA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ID_TABULACAO]"
+                          cachedDataType="i4"
+                          cachedName="ID_TABULACAO"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_TABULACAO]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_TABULACAO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[NOME_TABULACAO]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="NOME_TABULACAO"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_TABULACAO]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[NOME_TABULACAO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[MAILING]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="MAILING"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[MAILING]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[MAILING]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ROTA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="260"
+                          cachedName="ROTA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROTA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ROTA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[INICIO_CHAMADA]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="INICIO_CHAMADA"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_CHAMADA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[FIM_CHAMADA]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="FIM_CHAMADA"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_CHAMADA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[INICIO_POS]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="INICIO_POS"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_POS]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INICIO_POS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[FIM_POS]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="FIM_POS"
+                          cachedScale="3"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_POS]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[FIM_POS]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[TELEFONE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="TELEFONE"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[TELEFONE]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[INSTANCIA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="INSTANCIA"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[BANCO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="BANCO"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[BANCO]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ORIGEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="ORIGEM"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[ID_AGENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="ID_AGENTE"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_AGENTE]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_AGENTE]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].Columns[AGENTE_CONVERT]"
+                          cachedDataType="wstr"
+                          cachedLength="32"
+                          cachedName="AGENTE_CONVERT"
+                          externalMetadataColumnId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[AGENTE]"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[AGENTE_CONVERT]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                          dataType="dbDate"
+                          name="DATA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_KEY]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="ID_KEY" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CALL_ID]"
+                          dataType="i8"
+                          name="CALL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[EVENTO_ID]"
+                          dataType="i8"
+                          name="EVENTO_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="CPF" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_AGENTE]"
+                          dataType="wstr"
+                          length="128"
+                          name="ID_AGENTE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[AGENTE]"
+                          dataType="wstr"
+                          length="500"
+                          name="AGENTE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                          dataType="i8"
+                          name="ID_CAMPANHA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_CAMPANHA]"
+                          dataType="wstr"
+                          length="1200"
+                          name="NOME_CAMPANHA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_TABULACAO]"
+                          dataType="i8"
+                          name="ID_TABULACAO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_TABULACAO]"
+                          dataType="wstr"
+                          length="400"
+                          name="NOME_TABULACAO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[MAILING]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="MAILING" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROTA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="260"
+                          name="ROTA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_CHAMADA]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_CHAMADA"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INICIO_POS]"
+                          dataType="dbTimeStamp2"
+                          name="INICIO_POS"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[FIM_POS]"
+                          dataType="dbTimeStamp2"
+                          name="FIM_POS"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[TELEFONE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="25"
+                          name="TELEFONE" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="INSTANCIA" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="BANCO" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_INSERT]"
+                          dataType="dbTimeStamp2"
+                          name="DATA_INSERT"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversão de Dados"
+                  name="Conversor"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados]"
+                      name="Entrada de Conversão de Dados">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados].Columns[ID_KEY]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="ID_KEY"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados].Columns[CALL_ID]"
+                          cachedDataType="i8"
+                          cachedName="CALL_ID"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CALL_ID]" />
+                        <inputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados].Columns[ID_AGENTE]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="ID_AGENTE"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_AGENTE]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados]"
+                      exclusionGroup="1"
+                      name="Saída de Conversão de Dados"
+                      synchronousInputId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[ID_KEY_CONVERT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[ID_KEY_CONVERT]"
+                          name="ID_KEY_CONVERT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_KEY]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[CALL_ID_CONVERT]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[CALL_ID_CONVERT]"
+                          name="CALL_ID_CONVERT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[CALL_ID]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[AGENTE_CONVERT]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          length="32"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados].Columns[AGENTE_CONVERT]"
+                          name="AGENTE_CONVERT"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                              name="SourceInputColumnLineageID">#{Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB].Columns[ID_AGENTE]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Erro de Conversão de Dados]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Conversão de Dados"
+                      synchronousInputId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT.Paths[Saída de Conversão de Dados]"
+                  endId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Conversão de Dados"
+                  startId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Outputs[Saída de Conversão de Dados]" />
+                <path
+                  refId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT.Paths[Saída de Origem OLE DB]"
+                  endId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor.Inputs[Entrada de Conversão de Dados]"
+                  name="Saída de Origem OLE DB"
+                  startId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT.Outputs[Saída de Origem OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contêiner da Sequência 1\MAX_CALL_ID_ASPECT"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarefa Executar SQL"
+          DTS:DTSID="{98326e5c-3804-4ad1-b332-7bc4cbf46669}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="MAX_CALL_ID_ASPECT"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="SELECT ISNULL(MAX(CALL_ID), 0) AS MAX_CALL_ID_ASPECT From ACIONA_DISCADOR_ATIVO_ASPECT WITH (NOLOCK) &#xA;WHERE ORIGEM = 'ASPECT' AND BANCO = 'detail_epro'&#xA;AND DATA  = CAST(GETDATE() AS DATE) "
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="MAX_CALL_ID_ASPECT"
+                SQLTask:DtsVariableName="User::MAX_CALL_ID_ASPECT" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::MAX_CALL_ID_ASPECT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contêiner da Sequência 1.PrecedenceConstraints[Restrição 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{1482ad4d-6c97-4c3f-a86f-310b6bfdc0f7}"
+          DTS:From="Package\Contêiner da Sequência 1\MAX_CALL_ID_ASPECT"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restrição 1"
+          DTS:To="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="263.2,41.6"
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT"
+          TopLeft="275.291651925901,5.73333262519697" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Contêiner da Sequência 1\MAX_CALL_ID_ASPECT"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência 1.PrecedenceConstraints[Restrição 1]"
+          TopLeft="201.5,26.4166663125989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.7916519259011,0"
+              Start="0,0"
+              End="66.2916519259011,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.2916519259011,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="543.2,102.4"
+          Size="543.2,145.6"
+          Id="Package\Contêiner da Sequência 1"
+          TopLeft="130.999998942017,139.999998807907" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\Conversor"
+          TopLeft="670.32337543336,326.15555247777" />
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW"
+          TopLeft="861.812251688193,327.104759390373" />
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT.Paths[Saída de Origem OLE DB]"
+          TopLeft="557.6,350.677776238885">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="112.72337543336,0"
+              Start="0,0"
+              End="105.22337543336,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="105.22337543336,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT.Paths[Saída de Conversão de Dados]"
+          TopLeft="821.52337543336,347.430155934072">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.2888762548326,0"
+              Start="0,0"
+              End="32.7888762548326,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.7888762548326,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="234.4,41.6"
+          Id="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT"
+          TopLeft="3.11904774913711,16.6428570653711" />
+        <GroupLayout
+          Text="ASPECT"
+          ParentId="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="273.6,113.6"
+          Size="273.6,156.8"
+          Id="9d43bbc0-22cb-437f-9f94-ee770bd74ed2"
+          TopLeft="319.972218348334,273.264283380912">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_ASPECT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contêiner da Sequência 1\ACIONA_DISCADOR_ATIVO_ASPECT\ACIONA_DISCADOR_ATIVO_DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

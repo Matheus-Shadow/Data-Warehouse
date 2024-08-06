@@ -1,0 +1,1357 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/2/2024 10:58:26 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SRVMIS06"
+  DTS:CreatorName="MFDIGITAL\robo6.mis"
+  DTS:DTSID="{E97B7329-CC3B-4B13-B26B-1B6CC28479FC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{93B69856-549F-4715-9ACB-F3BB5777417F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10.10.220.101.RPL_OLOS.srvc.mis.prd]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{202464A6-AA04-4CA9-8A1B-D872740799E1}"
+      DTS:ObjectName="10.10.220.101.RPL_OLOS.srvc.mis.prd">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.10.220.101;User ID=srvc.mis.prd;Initial Catalog=RPL_OLOS;Provider=MSOLEDBSQL.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATarV6oU9pEmpK9rKoKAyYQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAGF3sW1DDShtsnR4Naw3yQAAAAAASAAACgAAAAEAAAAG1yjT3mt96Qx1pOwbu/oG8oAAAADI0ze91K4twri/S5BA3ndXDqjUAF2kybZqBA//1Ek3pqCWfHW/88bhQAAADDnZY6h4vceaVQG9tXT6GHLa7RqQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}"
+      DTS:ObjectName="SRVMIS06.DW_MFDIGITAL">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SRVMIS06;Initial Catalog=Staging_Area;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{0B7DFB6C-B922-4F44-99DE-C7A385FE7564}SRVMIS06.DW_MFDIGITAL;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TEMPOS_STAGING _OLOS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{D024F853-006D-45ED-B0EA-9018E26133D3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TEMPOS_STAGING _OLOS">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TEMPOS_OLOS]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                  connectionManagerRefId="Package.ConnectionManagers[SRVMIS06.DW_MFDIGITAL]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[DATA]"
+                      cachedDataType="dbDate"
+                      cachedName="DATA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_CAMPANHA]"
+                      cachedDataType="i4"
+                      cachedName="ID_CAMPANHA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CAMPANHA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CAMPANHA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CAMPANHA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CAMPANHA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_DISCADOR_OPERADOR]"
+                      cachedDataType="i4"
+                      cachedName="ID_DISCADOR_OPERADOR"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DISCADOR_OPERADOR]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_DISCADOR_OPERADOR]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="LOGIN_DISCADOR_OPERADOR"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN_DISCADOR_OPERADOR]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[NOME_DISCADOR_OPERADOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="NOME_DISCADOR_OPERADOR"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_DISCADOR_OPERADOR]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME_DISCADOR_OPERADOR]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="LOGIN_DISCADOR_SUPERVISOR"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN_DISCADOR_SUPERVISOR]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[LOGIN]"
+                      cachedDataType="dbTime2"
+                      cachedName="LOGIN"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[LOGOUT]"
+                      cachedDataType="dbTime2"
+                      cachedName="LOGOUT"
+                      cachedScale="7"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGOUT]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGOUT]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[QTD_LOGIN]"
+                      cachedDataType="i4"
+                      cachedName="QTD_LOGIN"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QTD_LOGIN]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGIN]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[QTD_LOGOUT]"
+                      cachedDataType="i4"
+                      cachedName="QTD_LOGOUT"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QTD_LOGOUT]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGOUT]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ATENDIDAS]"
+                      cachedDataType="i4"
+                      cachedName="ATENDIDAS"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATENDIDAS]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ATENDIDAS]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_LOGADO]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_LOGADO"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_LOGADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_LOGADO]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_PAUSA]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_PAUSA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_PAUSA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_PAUSA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_DESLOGADO]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_DESLOGADO"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_DESLOGADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DESLOGADO]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_FALADO]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_FALADO"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_FALADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_FALADO]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_DISPONIVEL]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_DISPONIVEL"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_DISPONIVEL]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DISPONIVEL]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_POS]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_POS"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_POS]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_POS]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TEMPO_IDLE]"
+                      cachedDataType="i4"
+                      cachedName="TEMPO_IDLE"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_IDLE]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_IDLE]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TMA]"
+                      cachedDataType="i4"
+                      cachedName="TMA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TMP]"
+                      cachedDataType="i4"
+                      cachedName="TMP"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMP]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMP]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TME]"
+                      cachedDataType="i4"
+                      cachedName="TME"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TME]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TME]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[INSTANCIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="INSTANCIA"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ORIGEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ORIGEM"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[TMO]"
+                      cachedDataType="i4"
+                      cachedName="TMO"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMO]" />
+                    <inputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[BANCO]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BANCO"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[BANCO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA]"
+                      dataType="dbDate"
+                      name="DATA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      dataType="i4"
+                      name="ID_CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CAMPANHA]"
+                      dataType="wstr"
+                      length="200"
+                      name="CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_DISCADOR_OPERADOR]"
+                      dataType="i4"
+                      name="ID_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOGIN_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="NOME_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN_DISCADOR_SUPERVISOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LOGIN_DISCADOR_SUPERVISOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGIN]"
+                      dataType="dbTime2"
+                      name="LOGIN"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[LOGOUT]"
+                      dataType="dbTime2"
+                      name="LOGOUT"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QTD_LOGIN]"
+                      dataType="i4"
+                      name="QTD_LOGIN" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QTD_LOGOUT]"
+                      dataType="i4"
+                      name="QTD_LOGOUT" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ATENDIDAS]"
+                      dataType="i4"
+                      name="ATENDIDAS" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_LOGADO]"
+                      dataType="i4"
+                      name="TEMPO_LOGADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_DESLOGADO]"
+                      dataType="i4"
+                      name="TEMPO_DESLOGADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_PAUSA]"
+                      dataType="i4"
+                      name="TEMPO_PAUSA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_DISPONIVEL]"
+                      dataType="i4"
+                      name="TEMPO_DISPONIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_FALADO]"
+                      dataType="i4"
+                      name="TEMPO_FALADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_POS]"
+                      dataType="i4"
+                      name="TEMPO_POS" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TEMPO_IDLE]"
+                      dataType="i4"
+                      name="TEMPO_IDLE" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMA]"
+                      dataType="i4"
+                      name="TMA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMP]"
+                      dataType="i4"
+                      name="TMP" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TME]"
+                      dataType="i4"
+                      name="TME" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TMO]"
+                      dataType="i4"
+                      name="TMO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="INSTANCIA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[BANCO]"
+                      dataType="wstr"
+                      length="20"
+                      name="BANCO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ORIGEM" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_INSERT]"
+                      dataType="dbTimeStamp2"
+                      name="DATA_INSERT"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Origem OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SET NOCOUNT ON;
+SET ANSI_WARNINGS OFF;
+
+DECLARE @dinicio DATETIME = CONVERT(DATETIME, CONVERT(VARCHAR(10), DATEADD(DAY, - 1, GETDATE()), 121) + ' 00:00:00');
+DECLARE @dfim DATETIME = CONVERT(DATETIME, CONVERT(VARCHAR(10), DATEADD(DAY, - 1, GETDATE()), 121) + ' 23:59:00');
+DECLARE @AuxiliarCampanhas TABLE (
+	Agentld INT
+	,Campaignld INT
+	,INDICE INT
+	);
+
+INSERT INTO @AuxiliarCampanhas
+SELECT DISTINCT Agentld
+	,Campaignld
+	,DENSE_RANK() OVER (
+		PARTITION BY LOG.Agentld ORDER BY LOG.Campaignld
+		) AS ID_NOVO
+FROM LoginRawData LOG WITH (NOLOCK)
+WHERE CAST(StartLogin AS DATE) = CAST(@dinicio AS DATE);
+
+
+DECLARE @WORK TABLE (
+	DATA DATE
+	,ID_DISCADOR_OPERADOR INT
+	,LOGIN_DISCADOR_OPERADOR VARCHAR(40)
+	,NOME_DISCADOR_OPERADOR VARCHAR(80)
+	,LOGIN_DISCADOR_SUPERVISOR VARCHAR(80)
+	,LOGIN TIME
+	,LOGOUT TIME
+	,QTD_LOGIN INT
+	,QTD_LOGOUT INT
+	,TEMPO_LOGADO INT
+	,TEMPO_DESLOGADO INT
+    -- , ID_NOVO INT
+    -- , ID_CAMPANHA INT
+    -- , CAMPANHA VARCHAR(100)
+	);
+
+
+;WITH Working as (
+SELECT CAST(StartLogin AS DATE) AS DATA
+	,A.Agentld AS ID_DISCADOR_OPERADOR
+	,E.LOGIN AS LOGIN_DISCADOR_OPERADOR
+	,E.UserName AS NOME_DISCADOR_OPERADOR
+	,C_user.UserName AS LOGIN_DISCADOR_SUPERVISOR
+	,MIN(CONVERT(TIME, StartLogin, 108)) AS LOGIN
+	,MAX(CONVERT(TIME, EndLogin, 108)) AS LOGOUT
+	,COUNT(StartLogin) AS QTD_LOGIN
+	,COUNT(EndLogin) AS QTD_LOGOUT
+	,CASE 
+		WHEN DATEDIFF(SECOND, LAG(EndLogin) OVER (
+					PARTITION BY E.LOGIN ORDER BY StartLogin
+						,EndLogin
+					), StartLogin) &gt;= 0
+			THEN DATEDIFF(SECOND, LAG(EndLogin) OVER (
+						PARTITION BY E.LOGIN ORDER BY StartLogin
+							,EndLogin
+						), StartLogin)
+		ELSE 0
+		END AS TEMPO_DESLOGADO
+	-- ,DENSE_RANK() OVER (
+	-- 	PARTITION BY A.Agentld ORDER BY A.Campaignld
+	-- 	) AS ID_NOVO,
+    --     A.Campaignld as ID_CAMPANHA,
+    --     c.[Description] as CAMPANHA
+FROM LoginRawData A
+INNER JOIN Users E WITH (NOLOCK) ON A.Agentld = E.Agentld
+INNER JOIN AgentSupervisor Sup WITH (NOLOCK) ON Sup.AgentId = E.Agentld
+INNER JOIN Users C_user WITH (NOLOCK) ON Sup.SupervisorId = C_user.Agentld
+--INNER JOIN Campaign C WITH (NOLOCK) ON C.Campaignld = A.Campaignld
+WHERE StartLogin BETWEEN @dinicio
+		AND @dfim
+GROUP BY CAST(StartLogin AS DATE)
+	,A.Agentld
+	,E.LOGIN
+	,E.UserName
+	,C_user.UserName ,StartLogin, EndLogin
+
+)
+
+
+INSERT INTO @WORK
+
+SELECT  
+    W.[DATA]
+    ,W.ID_DISCADOR_OPERADOR
+    ,W.LOGIN_DISCADOR_OPERADOR
+    ,W.NOME_DISCADOR_OPERADOR
+    ,W.LOGIN_DISCADOR_SUPERVISOR
+    ,MIN(W.[LOGIN]) AS LOGIN
+    ,MAX(W.LOGOUT) AS LOGOUT 
+    ,SUM(W.QTD_LOGIN) AS QTD_LOGIN
+    ,SUM(QTD_LOGOUT) AS QTD_LOGOUT
+    ,DATEDIFF(SECOND, MIN(W.[LOGIN]),MAX(W.LOGOUT)) AS TEMPO_LOGADO
+    ,SUM(TEMPO_DESLOGADO) AS TEMPO_DESLOGADO
+
+FROM Working W 
+
+GROUP BY W.[DATA]
+    ,W.ID_DISCADOR_OPERADOR
+    ,W.LOGIN_DISCADOR_OPERADOR
+    ,W.NOME_DISCADOR_OPERADOR
+    ,W.LOGIN_DISCADOR_SUPERVISOR;
+
+
+DECLARE @Ligacoes TABLE (
+    Agentld INT,
+    TEMPO_FALADO INT,
+    TEMPO_IDLE INT,
+    TEMPO_POS INT,
+    TEMPO_DISPONIVEL INT,
+    TEMPO_PAUSA INT,
+    ATENDIDAS INT
+);
+
+WITH Calls AS (
+    SELECT 
+        Agent.Agentld,
+        CASE WHEN [Description] IN ('Talking') THEN
+            DATEDIFF(SECOND, Agent.StartState, Agent.EndState) 
+        END AS TEMPO_FALADO,
+        CASE WHEN [Description] IN ('Idle') THEN
+            DATEDIFF(SECOND, Agent.StartState, Agent.EndState) 
+        END AS TEMPO_IDLE,
+        CASE WHEN [Description] IN ('Wrap') THEN
+            DATEDIFF(SECOND, Agent.StartState, Agent.EndState) 
+        END AS TEMPO_POS,
+        CASE WHEN [Description] IN ('Pause') THEN
+            DATEDIFF(SECOND, Agent.StartState, Agent.EndState) 
+        END AS TEMPO_PAUSA,
+        CASE WHEN [Description] IN ('Wrap', 'Idle', 'Talking') THEN
+            DATEDIFF(SECOND, Agent.StartState, Agent.EndState) 
+        END AS TEMPO_DISPONIVEL,
+        CASE WHEN ([Description] IN ('Talking') AND Callld != 0) THEN 1 ELSE 0 END AS ATENDIDAS,
+        CASE 
+            WHEN (
+                LAG(DATEDIFF(SECOND, StartState, EndState)) OVER (
+                    PARTITION BY Agent.Agentld ORDER BY Agent.AgentStateRawDatalD ASC
+                )
+            ) - DATEDIFF(SECOND, StartState, EndState) = 0
+            THEN 0
+            ELSE 1
+        END AS ID
+    FROM AgentStateRawData Agent WITH (NOLOCK)
+    INNER JOIN Info_AgentStatus Info ON Info.AgentStatusId = Agent.AgentStatus
+    WHERE CAST(StartState AS DATE) = CAST(@dinicio AS DATE)
+    --ORDER BY Agent.AgentStateRawDatalD ASC
+)
+
+INSERT INTO @Ligacoes
+SELECT 
+    Agentld,
+    SUM(TEMPO_FALADO) AS TEMPO_FALADO,
+    SUM(TEMPO_IDLE) AS TEMPO_IDLE,
+    SUM(TEMPO_POS) AS TEMPO_POS,
+    SUM(TEMPO_DISPONIVEL) AS TEMPO_DISPONIVEL,
+    SUM(TEMPO_PAUSA) AS TEMPO_PAUSA,
+    SUM(ATENDIDAS) AS ATENDIDAS
+FROM Calls
+WHERE ID = 1
+GROUP BY Agentld;
+--1142
+
+SELECT 
+    w.[DATA],
+    C.Campaignld AS ID_CAMPANHA,
+    CAST(C.[Description] AS NVARCHAR(100)) AS CAMPANHA,
+    w.ID_DISCADOR_OPERADOR,
+    w.LOGIN_DISCADOR_OPERADOR,
+    w.NOME_DISCADOR_OPERADOR,
+    w.LOGIN_DISCADOR_SUPERVISOR,
+    w.[LOGIN] AS LOGIN,
+    w.LOGOUT AS LOGOUT,
+    w.QTD_LOGIN AS QTD_LOGIN,
+    w.QTD_LOGOUT AS QTD_LOGOUT,
+    Calls.ATENDIDAS AS ATENDIDAS,
+    DATEDIFF(SECOND, w.[LOGIN], w.LOGOUT) AS TEMPO_LOGADO,
+    Calls.TEMPO_PAUSA AS TEMPO_PAUSA,
+    w.TEMPO_DESLOGADO AS TEMPO_DESLOGADO,
+    Calls.TEMPO_FALADO AS TEMPO_FALADO,
+    Calls.TEMPO_DISPONIVEL AS TEMPO_DISPONIVEL,
+    Calls.TEMPO_POS AS TEMPO_POS,
+    Calls.TEMPO_IDLE AS TEMPO_IDLE,
+    CASE 
+        WHEN ISNULL(Calls.ATENDIDAS, 0) = 0 THEN 0
+        ELSE ISNULL(Calls.TEMPO_FALADO, 0) / ISNULL(Calls.ATENDIDAS, 0)
+    END AS TMA,
+    CASE 
+        WHEN ISNULL(Calls.ATENDIDAS, 0) = 0 THEN 0
+        ELSE ISNULL(Calls.TEMPO_POS, 0) / ISNULL(Calls.ATENDIDAS, 0)
+    END AS TMP,
+    CASE 
+        WHEN ISNULL(Calls.ATENDIDAS, 0) = 0 THEN 0
+        ELSE ISNULL(Calls.TEMPO_IDLE, 0) / ISNULL(Calls.ATENDIDAS, 0)
+    END AS TME,
+    CASE
+      WHEN ISNULL(ATENDIDAS,0) = 0
+        THEN 0
+        ELSE 
+    (ISNULL(TEMPO_FALADO, 0) / ISNULL(ATENDIDAS, 0)) + (ISNULL(TEMPO_POS, 0) / ISNULL(ATENDIDAS, 0)) END AS TMO,
+	'10.10.220.101' AS INSTANCIA,
+    CAST(DB_NAME() AS NVARCHAR(10)) AS BANCO,
+    'OLOS' AS ORIGEM
+FROM @WORK w
+INNER JOIN @AuxiliarCampanhas AS AC ON AC.Agentld = w.ID_DISCADOR_OPERADOR
+INNER JOIN Campaign AS C ON C.Campaignld = AC.Campaignld
+INNER JOIN @Ligacoes AS Calls ON Calls.Agentld = w.ID_DISCADOR_OPERADOR
+WHERE w.[DATA] = CAST(@dinicio AS DATE)
+    AND AC.INDICE = 1;</property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[10.10.220.101.RPL_OLOS.srvc.mis.prd]"
+                  connectionManagerRefId="Package.ConnectionManagers[10.10.220.101.RPL_OLOS.srvc.mis.prd]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA]"
+                      name="DATA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CAMPANHA]"
+                      name="ID_CAMPANHA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CAMPANHA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CAMPANHA]"
+                      length="100"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CAMPANHA]"
+                      name="CAMPANHA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_DISCADOR_OPERADOR]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_DISCADOR_OPERADOR]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_DISCADOR_OPERADOR]"
+                      name="ID_DISCADOR_OPERADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN_DISCADOR_OPERADOR]"
+                      length="40"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]"
+                      name="LOGIN_DISCADOR_OPERADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_DISCADOR_OPERADOR]"
+                      length="80"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[NOME_DISCADOR_OPERADOR]"
+                      name="NOME_DISCADOR_OPERADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN_DISCADOR_SUPERVISOR]"
+                      length="80"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]"
+                      name="LOGIN_DISCADOR_SUPERVISOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGIN]"
+                      name="LOGIN"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGOUT]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGOUT]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[LOGOUT]"
+                      name="LOGOUT"
+                      scale="7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGIN]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_LOGIN]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGIN]"
+                      name="QTD_LOGIN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGOUT]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_LOGOUT]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[QTD_LOGOUT]"
+                      name="QTD_LOGOUT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ATENDIDAS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ATENDIDAS]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ATENDIDAS]"
+                      name="ATENDIDAS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_LOGADO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_LOGADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_LOGADO]"
+                      name="TEMPO_LOGADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_PAUSA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_PAUSA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_PAUSA]"
+                      name="TEMPO_PAUSA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DESLOGADO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_DESLOGADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DESLOGADO]"
+                      name="TEMPO_DESLOGADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_FALADO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_FALADO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_FALADO]"
+                      name="TEMPO_FALADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DISPONIVEL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_DISPONIVEL]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_DISPONIVEL]"
+                      name="TEMPO_DISPONIVEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_POS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_POS]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_POS]"
+                      name="TEMPO_POS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_IDLE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_IDLE]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TEMPO_IDLE]"
+                      name="TEMPO_IDLE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMA]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMA]"
+                      name="TMA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMP]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMP]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMP]"
+                      name="TMP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TME]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TME]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TME]"
+                      name="TME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                      length="13"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[INSTANCIA]"
+                      name="INSTANCIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                      length="10"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[BANCO]"
+                      name="BANCO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                      length="4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ORIGEM]"
+                      name="ORIGEM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMO]"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[TMO]"
+                      name="TMO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA]"
+                      dataType="dbDate"
+                      name="DATA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CAMPANHA]"
+                      dataType="i4"
+                      name="ID_CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CAMPANHA]"
+                      dataType="wstr"
+                      length="100"
+                      name="CAMPANHA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_DISCADOR_OPERADOR]"
+                      dataType="i4"
+                      name="ID_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="LOGIN_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="NOME_DISCADOR_OPERADOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN_DISCADOR_SUPERVISOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="LOGIN_DISCADOR_SUPERVISOR" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGIN]"
+                      dataType="dbTime2"
+                      name="LOGIN"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[LOGOUT]"
+                      dataType="dbTime2"
+                      name="LOGOUT"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_LOGIN]"
+                      dataType="i4"
+                      name="QTD_LOGIN" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[QTD_LOGOUT]"
+                      dataType="i4"
+                      name="QTD_LOGOUT" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ATENDIDAS]"
+                      dataType="i4"
+                      name="ATENDIDAS" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_LOGADO]"
+                      dataType="i4"
+                      name="TEMPO_LOGADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_PAUSA]"
+                      dataType="i4"
+                      name="TEMPO_PAUSA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_DESLOGADO]"
+                      dataType="i4"
+                      name="TEMPO_DESLOGADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_FALADO]"
+                      dataType="i4"
+                      name="TEMPO_FALADO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_DISPONIVEL]"
+                      dataType="i4"
+                      name="TEMPO_DISPONIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_POS]"
+                      dataType="i4"
+                      name="TEMPO_POS" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TEMPO_IDLE]"
+                      dataType="i4"
+                      name="TEMPO_IDLE" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMA]"
+                      dataType="i4"
+                      name="TMA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMP]"
+                      dataType="i4"
+                      name="TMP" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TME]"
+                      dataType="i4"
+                      name="TME" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="INSTANCIA" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[BANCO]"
+                      dataType="wstr"
+                      length="10"
+                      name="BANCO" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ORIGEM" />
+                    <externalMetadataColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[TMO]"
+                      dataType="i4"
+                      name="TMO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                      dataType="dbDate"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA]"
+                      name="DATA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CAMPANHA]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CAMPANHA]"
+                      name="ID_CAMPANHA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CAMPANHA]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CAMPANHA]"
+                      name="CAMPANHA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_DISCADOR_OPERADOR]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_DISCADOR_OPERADOR]"
+                      name="ID_DISCADOR_OPERADOR" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN_DISCADOR_OPERADOR]"
+                      name="LOGIN_DISCADOR_OPERADOR" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_DISCADOR_OPERADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME_DISCADOR_OPERADOR]"
+                      name="NOME_DISCADOR_OPERADOR" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN_DISCADOR_SUPERVISOR]"
+                      name="LOGIN_DISCADOR_SUPERVISOR" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN]"
+                      dataType="dbTime2"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGIN]"
+                      name="LOGIN"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGOUT]"
+                      dataType="dbTime2"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[LOGOUT]"
+                      name="LOGOUT"
+                      scale="7" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_LOGIN]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_LOGIN]"
+                      name="QTD_LOGIN" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_LOGOUT]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[QTD_LOGOUT]"
+                      name="QTD_LOGOUT" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ATENDIDAS]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ATENDIDAS]"
+                      name="ATENDIDAS" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_LOGADO]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_LOGADO]"
+                      name="TEMPO_LOGADO" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_PAUSA]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_PAUSA]"
+                      name="TEMPO_PAUSA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_DESLOGADO]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_DESLOGADO]"
+                      name="TEMPO_DESLOGADO" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_FALADO]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_FALADO]"
+                      name="TEMPO_FALADO" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_DISPONIVEL]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_DISPONIVEL]"
+                      name="TEMPO_DISPONIVEL" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_POS]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_POS]"
+                      name="TEMPO_POS" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_IDLE]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TEMPO_IDLE]"
+                      name="TEMPO_IDLE" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMA]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMA]"
+                      name="TMA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMP]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMP]"
+                      name="TMP" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TME]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TME]"
+                      name="TME" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMO]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[TMO]"
+                      name="TMO" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[INSTANCIA]"
+                      name="INSTANCIA" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[BANCO]"
+                      name="BANCO" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ORIGEM]"
+                      name="ORIGEM" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TEMPOS_STAGING _OLOS.Paths[Saída de Origem OLE DB]"
+              endId="Package\TEMPOS_STAGING _OLOS\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem OLE DB"
+              startId="Package\TEMPOS_STAGING _OLOS\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="221,43"
+          Id="Package\TEMPOS_STAGING _OLOS"
+          TopLeft="174.5,189.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\TEMPOS_STAGING _OLOS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\TEMPOS_STAGING _OLOS\Origem OLE DB"
+          TopLeft="110,187" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\TEMPOS_STAGING _OLOS\Destino OLE DB"
+          TopLeft="460,188" />
+        <EdgeLayout
+          Id="Package\TEMPOS_STAGING _OLOS.Paths[Saída de Origem OLE DB]"
+          TopLeft="268,208.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="192,0"
+              Start="0,0"
+              End="184.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="184.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TEMPOS_STAGING _OLOS\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TEMPOS_STAGING _OLOS\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
